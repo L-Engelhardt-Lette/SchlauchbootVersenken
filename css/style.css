@@ -5,6 +5,13 @@ html{
     --mid: #2ca6a4ff;
     --light: #00c2d1ff;
 }
+@font-face {
+    font-family: 'BubbleWaterRegular';
+    src: url('/font/BubbleWaterRegular.ttf');
+}
+h1{
+    font-family: BubbleWaterRegular;
+}
 table {
     margin: 1rem auto;
   }
