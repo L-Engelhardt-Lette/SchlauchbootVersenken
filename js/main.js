@@ -30,3 +30,29 @@ function generateTable() {
     tbl.setAttribute("border", "2");
   }
   
+function generateGame(){
+     const board = document.getElementById('board');
+
+ 
+
+  for (let row = 0; row < 25; row++) {
+
+      for (let col = 0; col < 25; col++) {
+
+          const cell = document.createElement('div');
+
+          cell.classList.add('cell');
+
+          if ((row + col) % 2 === 0) {
+
+              cell.classList.add('even');
+
+          }
+
+          board.appendChild(cell);
+
+      }
+
+  }
+}
+ 

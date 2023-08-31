@@ -12,11 +12,126 @@ html{
 h1{
     font-family: BubbleWaterRegular;
 }
+
+.title-div{
+    text-align: center;
+}
+.title-text{
+    padding-top: 1em;
+    font-size: 3em;
+}
+
+  
+.Game-Interface-Start{
+    margin: auto;
+    margin-top: 50%;
+    width:10em;
+}
 table {
     margin: 1rem auto;
-  }
+}
   
-  td {
+td {
     padding: 0.5rem;
-  }
-  
+}
+
+
+#board {
+
+    width: 1000px;
+
+    height: 1000px;
+
+    display: grid;
+
+    grid-template-columns: repeat(25, 1fr);
+
+    grid-template-rows: repeat(25, 1fr);
+
+}
+
+
+
+.cell {
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: #2ca6a4ff;
+
+}
+
+
+
+.even {
+
+    background-color: #00c2d1ff;
+
+}
+
+
+
+/*
+  Button
+*/
+
+button {
+    position: relative;
+    height: 50px;
+    padding: 0 30px;
+    border: 2px solid #000;
+    background: #e8e8e8;
+    user-select: none;
+    white-space: nowrap;
+    transition: all .05s linear;
+    font-family: inherit;
+   }
+   
+   button:before, button:after {
+    content: "";
+    position: absolute;
+    background: #e8e8e8;
+    transition: all .2s linear;
+   }
+   
+   button:before {
+    width: calc(100% + 6px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: -3px;
+   }
+   
+   button:after {
+    width: calc(100% - 16px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: 8px;
+   }
+   
+   button:hover {
+    cursor: crosshair;
+   }
+   
+   button:active {
+    transform: scale(0.95);
+   }
+   
+   button:hover:before {
+    height: calc(100% - 32px);
+    top: 16px;
+   }
+   
+   button:hover:after {
+    width: calc(100% - 32px);
+    left: 16px;
+   }
+   
+   button span {
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+    font-weight: 600;
+   }
+
+/* END */
