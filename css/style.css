@@ -5,3 +5,11 @@ root{
     --mid: #2ca6a4ff;
     --light: #00c2d1ff;
 }
+table {
+    margin: 1rem auto;
+  }
+  
+  td {
+    padding: 0.5rem;
+  }
+  
