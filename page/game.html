@@ -1,84 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schiffe versenken Game</title>
-<style>
-  table {
-    border-collapse: collapse;
-  }
-  td {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
-    text-align: center;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Schlauchboot Versenken Game</title>
 </head>
 <body>
-<h1>Schiffe versenken Game</h1>
-<button id="resetButton">Reset</button>
-<table id="gameBoard"></table>
-<script>
-const numRows = 25;
-const numCols = 25;
-const gameBoard = document.getElementById('gameBoard');
-const resetButton = document.getElementById('resetButton');
-
-let boardData = [];
-
-function initializeBoard() {
-  for (let i = 0; i < numRows; i++) {
-    const row = [];
-    for (let j = 0; j < numCols; j++) {
-      row.push(0); // 0 represents empty space, 1 represents boat
-    }
-    boardData.push(row);
-  }
-}
-
-function renderBoard() {
-  gameBoard.innerHTML = '';
-  for (let i = 0; i < numRows; i++) {
-    const rowElem = document.createElement('tr');
-    for (let j = 0; j < numCols; j++) {
-      const cellElem = document.createElement('td');
-      cellElem.dataset.row = i;
-      cellElem.dataset.col = j;
-      cellElem.addEventListener('click', handleCellClick);
-      if (boardData[i][j] === 1) {
-        cellElem.classList.add('boat');
-      }
-      rowElem.appendChild(cellElem);
-    }
-    gameBoard.appendChild(rowElem);
-  }
-}
-
-function handleCellClick(event) {
-  const row = parseInt(event.target.dataset.row);
-  const col = parseInt(event.target.dataset.col);
-  
-  if (boardData[row][col] === 0) {
-    boardData[row][col] = 1;
-    event.target.classList.add('boat');
-  } else {
-    boardData[row][col] = 0;
-    event.target.classList.remove('boat');
-  }
-}
-
-function resetBoard() {
-  boardData = [];
-  initializeBoard();
-  renderBoard();
-}
-
-initializeBoard();
-renderBoard();
-
-resetButton.addEventListener('click', resetBoard);
-</script>
+    <div class="container card-header">
+        <h1 class="text-white">Schlauchboot Versenken</h1>
+    </div>
+        <button id="resetButton">Reset</button>
+    <table id="gameBoard"></table>
+    <!--Script-->
+    <script src="/js/main.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

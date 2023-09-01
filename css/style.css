@@ -31,4 +31,12 @@ h1{
 .Game-Start-Button {
     margin-top: 30vh;
 }
-
+table {
+    border-collapse: collapse;
+  }
+  td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+  }

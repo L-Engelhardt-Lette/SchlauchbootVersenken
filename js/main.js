@@ -1,58 +1,58 @@
-function generateTable() {
-    // creates a <table> element and a <tbody> element
-    const tbl = document.createElement("table");
-    const tblBody = document.createElement("tbody");
-  
-    // creating all cells
-    for (let i = 0; i < 2; i++) {
-      // creates a table row
-      const row = document.createElement("tr");
-  
-      for (let j = 0; j < 2; j++) {
-        // Create a <td> element and a text node, make the text
-        // node the contents of the <td>, and put the <td> at
-        // the end of the table row
-        const cell = document.createElement("td");
-        const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-      }
-  
-      // add the row to the end of the table body
-      tblBody.appendChild(row);
+const numRows = 25;
+const numCols = 25;
+const gameBoard = document.getElementById('gameBoard');
+const resetButton = document.getElementById('resetButton');
+
+let boardData = [];
+
+function initializeBoard() {
+  for (let i = 0; i < numRows; i++) {
+    const row = [];
+    for (let j = 0; j < numCols; j++) {
+      row.push(0); // 0 represents empty space, 1 represents boat
     }
-  
-    // put the <tbody> in the <table>
-    tbl.appendChild(tblBody);
-    // appends <table> into <body>
-    document.body.appendChild(tbl);
-    // sets the border attribute of tbl to '2'
-    tbl.setAttribute("border", "2");
-  }
-  
-function generateGame(){
-     const board = document.getElementById('board');
-
- 
-
-  for (let row = 0; row < 25; row++) {
-
-      for (let col = 0; col < 25; col++) {
-
-          const cell = document.createElement('div');
-
-          cell.classList.add('cell');
-
-          if ((row + col) % 2 === 0) {
-
-              cell.classList.add('even');
-
-          }
-
-          board.appendChild(cell);
-
-      }
-
+    boardData.push(row);
   }
 }
- 
+
+function renderBoard() {
+  gameBoard.innerHTML = '';
+  for (let i = 0; i < numRows; i++) {
+    const rowElem = document.createElement('tr');
+    for (let j = 0; j < numCols; j++) {
+      const cellElem = document.createElement('td');
+      cellElem.dataset.row = i;
+      cellElem.dataset.col = j;
+      cellElem.addEventListener('click', handleCellClick);
+      if (boardData[i][j] === 1) {
+        cellElem.classList.add('boat');
+      }
+      rowElem.appendChild(cellElem);
+    }
+    gameBoard.appendChild(rowElem);
+  }
+}
+
+function handleCellClick(event) {
+  const row = parseInt(event.target.dataset.row);
+  const col = parseInt(event.target.dataset.col);
+  
+  if (boardData[row][col] === 0) {
+    boardData[row][col] = 1;
+    event.target.classList.add('boat');
+  } else {
+    boardData[row][col] = 0;
+    event.target.classList.remove('boat');
+  }
+}
+
+function resetBoard() {
+  boardData = [];
+  initializeBoard();
+  renderBoard();
+}
+
+initializeBoard();
+renderBoard();
+
+resetButton.addEventListener('click', resetBoard);
