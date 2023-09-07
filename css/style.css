@@ -9,6 +9,7 @@ html{
     font-family: 'BubbleWaterRegular';
     src: url('/font/BubbleWaterRegular.ttf');
 }
+
 h1{
     font-family: BubbleWaterRegular;
 }
@@ -19,9 +20,9 @@ h1{
 .title-text{
     padding-top: 1em;
     font-size: 3em;
+    color: var(--white);
 }
 
-  
 .Game-Interface-Start{
     margin: auto;
     margin-top: 50%;
@@ -80,8 +81,8 @@ button {
     position: relative;
     height: 50px;
     padding: 0 30px;
-    border: 2px solid #000;
-    background: #e8e8e8;
+    border: 2px solid var(--dark);
+    background: var(--mid);
     user-select: none;
     white-space: nowrap;
     transition: all .05s linear;
@@ -91,7 +92,7 @@ button {
    button:before, button:after {
     content: "";
     position: absolute;
-    background: #e8e8e8;
+    background: var(--light);
     transition: all .2s linear;
    }
    
