@@ -5,6 +5,20 @@ html{
     --mid: #2ca6a4ff;
     --light: #00c2d1ff;
 }
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.cover-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
 @font-face {
     font-family: 'BubbleWaterRegular';
     src: url('/font/BubbleWaterRegular.ttf');
@@ -12,17 +26,12 @@ html{
 
 h1{
     font-family: BubbleWaterRegular;
-}
-
-.title-div{
-    text-align: center;
-}
-.title-text{
-    padding-top: 1em;
+    padding-top: 0.5em;
     font-size: 3em;
     color: var(--white);
 }
 
+  
 .Game-Interface-Start{
     margin: auto;
     margin-top: 50%;
@@ -81,8 +90,8 @@ button {
     position: relative;
     height: 50px;
     padding: 0 30px;
-    border: 2px solid var(--dark);
-    background: var(--mid);
+    border: 2px solid #000;
+    background: #e8e8e8;
     user-select: none;
     white-space: nowrap;
     transition: all .05s linear;
@@ -92,7 +101,7 @@ button {
    button:before, button:after {
     content: "";
     position: absolute;
-    background: var(--light);
+    background: #e8e8e8;
     transition: all .2s linear;
    }
    
