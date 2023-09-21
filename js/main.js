@@ -1,6 +1,3 @@
-const numRows = 25;
-const numCols = 25;
-
 
 function initializeBoard() {
   // creates a <table> element and a <tbody> element
@@ -41,5 +38,11 @@ function initializeBoard() {
 
 function resetBoard() {
   const tabledelete = document.getElementById("table");
-  tabledelete.remove();
+  if (tabledelete) {
+    tabledelete.remove();
+  }
+  
+  
+  // Die initializeBoard() Funktion erneut aufrufen, um die Tabelle zu erstellen
+
 }
