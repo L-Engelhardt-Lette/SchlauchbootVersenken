@@ -41,7 +41,6 @@ body {
 .title-bg{
     background-image: url(/img/title-bg.png);
 }
-
 .title-text{
     font-size: 4em  ;
     color: var(--white);
