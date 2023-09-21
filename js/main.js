@@ -1,17 +1,7 @@
 const numRows = 25;
 const numCols = 25;
 
-function initializeBoard() {
-  var table = document.createElement("table");
-  document.getElementById("tabele").appendChild(table);
-  for (let i = 0; i < numRows; i++) {
-    document.createElement()
-    for (let j = 0; j < numCols; j++) {
-      row.push(0);
-    }
-    boardData.push(row);
-  }
-}
+
 function initializeBoard() {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement("table");
@@ -35,17 +25,21 @@ function initializeBoard() {
     // add the row to the end of the table body
     tblBody.appendChild(row);
   }
-
+  tblBody.setAttribute("border","2")
   // put the <tbody> in the <table>
   tbl.appendChild(tblBody);
   // appends <table> into <body>
-  document.body.appendChild(tbl);
+  const tableDiv = document.getElementById("table");
+  tableDiv.appendChild(tbl);
   // sets the border attribute of tbl to '2'
   tbl.setAttribute("border", "2");
+  
 }
 
 
 
 
 function resetBoard() {
+  const tabledelete = document.getElementById("table");
+  tabledelete.remove();
 }
