@@ -37,10 +37,7 @@ function initializeBoard() {
 
 
 function resetBoard() {
-  const tabledelete = document.getElementById("table");
-  if (tabledelete) {
-    tabledelete.remove();
-  }
+  let result = text.replace(table,"hallo")
   
   
   // Die initializeBoard() Funktion erneut aufrufen, um die Tabelle zu erstellen
