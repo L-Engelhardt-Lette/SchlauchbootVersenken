@@ -11,6 +11,9 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+.bg-img{
+    background-image: url(/img/bg.jpg);
+}
 .cover-container {
     flex: 1;
     display: flex;
@@ -44,7 +47,6 @@ table {
 td {
     padding: 0.5rem;
 }
-
 
 #board {
 
