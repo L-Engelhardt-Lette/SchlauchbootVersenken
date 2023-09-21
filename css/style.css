@@ -40,11 +40,24 @@ body {
     font-size: 4em  ;
     color: var(--white);
 }
-
-
+h1{
+    font-family: BubbleWaterRegular;
+    padding-top: 0.5em;
+    font-size: 3em;
+    color: var(--white);
+}
 /*  END
 */
 
+/*  Game Interface
+*/
+.Game-Interface-Start{
+    margin: auto;
+    margin-top: 50%;
+    width:10em;
+}
+/*  END
+*/
 
 /*  Footer
 */
@@ -79,52 +92,5 @@ body {
 }
 
 
-h1{
-    font-family: BubbleWaterRegular;
-    padding-top: 0.5em;
-    font-size: 3em;
-    color: var(--white);
-}
 
   
-.Game-Interface-Start{
-    margin: auto;
-    margin-top: 50%;
-    width:10em;
-}
-table {
-    margin: 1rem auto;
-}
-  
-td {
-    padding: 0.5rem;
-}
-
-#board {
-
-    width: 1000px;
-
-    height: 1000px;
-
-    display: grid;
-
-    grid-template-columns: repeat(25, 1fr);
-
-    grid-template-rows: repeat(25, 1fr);
-
-}
-
-.cell {
-
-    width: 100%;
-
-    height: 100%;
-
-    background-color: #2ca6a4ff;
-
-}
-.even {
-
-    background-color: #00c2d1ff;
-
-}
