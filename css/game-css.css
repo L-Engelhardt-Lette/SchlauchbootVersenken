@@ -5,6 +5,8 @@ html{
     --mid: #2ca6a4ff;
     --light: #00c2d1ff;
 }
+/*  Buttons
+*/
 button {
     font-size: 18px;
     color: var(--black);
@@ -44,3 +46,17 @@ button {
     transition-duration: 400ms;
     transition-property: width, left;
   }
+/*  END
+*/
+
+/*  Footer
+*/
+.Game-Interface-Create{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+/*  END
+*/
