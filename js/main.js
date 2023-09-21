@@ -18,11 +18,11 @@ function initializeBoard() {
   const tblBody = document.createElement("tbody");
 
   // creating all cells
-  for (let i = 0; i < 25; i++) {
+  for (let i = 1; i < 26; i++) {
     // creates a table row
     const row = document.createElement("tr");
 
-    for (let j = 0; j < 25; j++) {
+    for (let j = 1; j < 26; j++) {
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
