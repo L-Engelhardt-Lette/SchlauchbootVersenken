@@ -59,7 +59,7 @@ h1{
 */
 .Game-Interface-Start{
     margin: auto;
-    width:20em;
+    width:14em;
 }
 /*  END
 */
@@ -76,12 +76,12 @@ h1{
     margin: 0 auto;
 }
 #creators{
-        font-size: 1.5em;
-        color: var(--white);
+    font-size: 1.5em;
+    color: var(--white);
 }
 #copyright{
-        color: var(--white);
-        padding-bottom: 0.5em;
+    color: var(--white);
+    padding-bottom: 0.5em;
 }
 /*  END
 */
