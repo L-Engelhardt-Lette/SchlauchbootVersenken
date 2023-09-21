@@ -1,3 +1,5 @@
+/*  MAIN CSS
+*/
 html{
     --black: #070600ff;
     --white: #f7f7ffff;
@@ -11,9 +13,36 @@ body {
     min-height: 100vh;
     margin: 0;
 }
+/*  END
+*/
+
+/*  Global
+*/
 .bg-img{
     background-image: url(/img/bg.jpg);
 }
+@font-face {
+    font-family: 'BubbleWaterRegular';
+    src: url('/font/BubbleWaterRegular.ttf');
+}
+
+/*  END
+*/
+
+/*  Header Index
+*/
+.title-div{
+    width: 60%;
+    margin: 0 auto;
+}
+.title-text{
+    font-size: 4em  ;
+    color: var(--white);
+}
+
+
+/*  END
+*/
 .cover-container {
     flex: 1;
     display: flex;
@@ -22,10 +51,7 @@ body {
     align-items: center;
     height: 100%;
 }
-@font-face {
-    font-family: 'BubbleWaterRegular';
-    src: url('/font/BubbleWaterRegular.ttf');
-}
+
 
 h1{
     font-family: BubbleWaterRegular;
@@ -73,77 +99,8 @@ td {
     background-color: #2ca6a4ff;
 
 }
-
-
-
 .even {
 
     background-color: #00c2d1ff;
 
 }
-
-
-
-/*
-  Button
-*/
-
-button {
-    position: relative;
-    height: 50px;
-    padding: 0 30px;
-    border: 2px solid #000;
-    background: #e8e8e8;
-    user-select: none;
-    white-space: nowrap;
-    transition: all .05s linear;
-    font-family: inherit;
-   }
-   
-   button:before, button:after {
-    content: "";
-    position: absolute;
-    background: #e8e8e8;
-    transition: all .2s linear;
-   }
-   
-   button:before {
-    width: calc(100% + 6px);
-    height: calc(100% - 16px);
-    top: 8px;
-    left: -3px;
-   }
-   
-   button:after {
-    width: calc(100% - 16px);
-    height: calc(100% + 6px);
-    top: -3px;
-    left: 8px;
-   }
-   
-   button:hover {
-    cursor: crosshair;
-   }
-   
-   button:active {
-    transform: scale(0.95);
-   }
-   
-   button:hover:before {
-    height: calc(100% - 32px);
-    top: 16px;
-   }
-   
-   button:hover:after {
-    width: calc(100% - 32px);
-    left: 16px;
-   }
-   
-   button span {
-    font-size: 15px;
-    z-index: 3;
-    position: relative;
-    font-weight: 600;
-   }
-
-/* END */
