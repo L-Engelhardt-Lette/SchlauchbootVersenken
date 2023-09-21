@@ -37,9 +37,5 @@ function initializeBoard() {
 
 
 function resetBoard() {
-  let result = text.replace(table,"hallo")
-  
-  
-  // Die initializeBoard() Funktion erneut aufrufen, um die Tabelle zu erstellen
 
 }
