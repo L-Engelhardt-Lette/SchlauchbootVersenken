@@ -1,62 +1,58 @@
+html{
+    --black: #070600ff;
+    --white: #f7f7ffff;
+    --dark: #3066beff;
+    --mid: #2ca6a4ff;
+    --light: #00c2d1ff;
+}
 /*
   Button
 */
-button {
+.button-start {
+    --color: var(--white);
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
     position: relative;
-    height: 50px;
-    padding: 0 30px;
-    border: 2px solid #000;
-    background: #e8e8e8;
-    user-select: none;
-    white-space: nowrap;
-    transition: all .05s linear;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 2em;
+    border: 1px;
     font-family: inherit;
-   }
-   
-   button:before, button:after {
-    content: "";
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+}
+.button-start::before, .button-start::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
     position: absolute;
-    background: #e8e8e8;
-    transition: all .2s linear;
-   }
-   
-   button:before {
-    width: calc(100% + 6px);
-    height: calc(100% - 16px);
-    top: 8px;
-    left: -3px;
-   }
-   
-   button:after {
-    width: calc(100% - 16px);
-    height: calc(100% + 6px);
-    top: -3px;
-    left: 8px;
-   }
-   
-   button:hover {
-    cursor: crosshair;
-   }
-   
-   button:active {
-    transform: scale(0.95);
-   }
-   
-   button:hover:before {
-    height: calc(100% - 32px);
-    top: 16px;
-   }
-   
-   button:hover:after {
-    width: calc(100% - 32px);
-    left: 16px;
-   }
-   
-   button span {
-    font-size: 15px;
-    z-index: 3;
-    position: relative;
-    font-weight: 600;
-   }
-
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--light);
+    transition: 0.5s ease;
+}
+.button-start::before {
+    top: -1em;
+    left: -1em;
+}
+.button-start::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+.button-start:hover::before, .button-start:hover::after {
+    height: 410px;
+    width: 410px;
+}
+.button-start:hover {
+    color: var(--white);
+}
+.button-start:active {
+    filter: brightness(.8);
+}
 /* END */
