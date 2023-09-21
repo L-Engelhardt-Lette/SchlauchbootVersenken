@@ -6,6 +6,7 @@ html{
     --dark: #3066beff;
     --mid: #2ca6a4ff;
     --light: #00c2d1ff;
+    font-family: 'BubbleWaterRegular';
 }
 body {
     display: flex;
@@ -13,6 +14,7 @@ body {
     min-height: 100vh;
     margin: 0;
     height: 100%;
+    font-family: 'BubbleWaterRegular';
 }
 /*  END
 */
@@ -45,7 +47,7 @@ body {
     color: var(--white);
 }
 h1{
-    font-family: BubbleWaterRegular;
+    font-family: 'BubbleWaterRegular';
     padding-top: 0.5em;
     font-size: 3em;
     color: var(--white);
@@ -65,12 +67,13 @@ h1{
 /*  Footer
 */
 #index-footer{
-        padding-top: 0.5em;
-        margin-bottom: 0.3em;
-        border-radius: 1em;
-        text-align: center;
-        width: 50%;
-        margin: 0 auto;
+    font-family: 'BubbleWaterRegular';
+    padding-top: 0.5em;
+    margin-bottom: 0.3em;
+    border-radius: 1em;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
 }
 #creators{
         font-size: 1.5em;
