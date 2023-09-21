@@ -43,6 +43,31 @@ body {
 
 /*  END
 */
+
+
+/*  Footer
+*/
+#index-footer{
+        background-color: rgba(51, 51, 51, .70);
+        padding-top: 0.5em;
+        margin-bottom: 0.3em;
+        border-radius: 1em;
+        text-align: center;
+        width: 50%;
+        margin: 0 auto;
+}
+#creators{
+        font-size: 1.5em;
+        color: var(--white);
+}
+#copyright{
+        color: var(--white);
+        padding-bottom: 0.5em;
+}
+/*  END
+*/
+
+
 .cover-container {
     flex: 1;
     display: flex;
