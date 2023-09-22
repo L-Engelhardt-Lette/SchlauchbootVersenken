@@ -37,19 +37,21 @@ body {
 .title-div{
     text-align: center;
     margin: 0 auto;
-}
-.title-bg{
-    background-image: url(/img/title-bg.png);
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 400px;
 }
 .title-text{
-    font-size: 4em  ;
+    white-space: nowrap;
+    font-size: 4em;
     color: var(--white);
-}
-h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: 'BubbleWaterRegular';
-    padding-top: 0.5em;
-    font-size: 3em;
-    color: var(--white);
+
 }
 /*  END
 */
