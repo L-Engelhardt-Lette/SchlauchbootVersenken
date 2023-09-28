@@ -1,4 +1,3 @@
-
 function initializeBoard() {
   // creates a <table> element and a <tbody> element
   const tbl = document.createElement("table");
@@ -10,27 +9,40 @@ function initializeBoard() {
     const row = document.createElement("tr");
 
     for (let j = 1; j < 26; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
-      // the end of the table row
+      // Create a <td> element
       const cell = document.createElement("td");
-      const cellText = document.createTextNode(`${i}, ${j}`);
-      cell.appendChild(cellText);
+      
+      // Set the width and height of the cell to 2em
+      cell.style.width = "2em";
+      cell.style.height = "2em";
+      
+      // Add a border to the cell
+      cell.style.border = "1px solid black"; // You can adjust the border style as needed
+      
+      // Create a text node and set it as the contents of the <td>
+      //const cellText = document.createTextNode(`${i}, ${j}`);
+      //cell.appendChild(cellText);
+      
+      // Add the <td> to the current row
       row.appendChild(cell);
     }
 
-    // add the row to the end of the table body
+    // Add the row to the table body
     tblBody.appendChild(row);
   }
-  tblBody.setAttribute("border","2")
-  // put the <tbody> in the <table>
+  
+  // Set the border attribute of the table body to '2' (optional)
+  tblBody.setAttribute("border", "2");
+  
+  // Put the <tbody> in the <table>
   tbl.appendChild(tblBody);
-  // appends <table> into <body>
+  
+  // Appends <table> into the element with the id "table"
   const tableDiv = document.getElementById("table");
   tableDiv.appendChild(tbl);
-  // sets the border attribute of tbl to '2'
-  tbl.setAttribute("border", "2");
   
+  // Set the border attribute of the table to '2' (optional)
+  tbl.setAttribute("border", "2");
 }
 
 
