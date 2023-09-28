@@ -67,6 +67,10 @@ body {
 
 /*  Footer
 */
+.olaf {
+    color: white;
+    text-decoration: none;
+}
 #index-footer{
     font-family: 'BubbleWaterRegular';
     padding-top: 0.5em;
