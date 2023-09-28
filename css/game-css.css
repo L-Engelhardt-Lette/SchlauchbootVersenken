@@ -58,7 +58,7 @@ table {
 td {
   width: 2em;
   height: 2em;
-  border: 1px solid black;
+  border: 1px solid var(--white);
   text-align: center;
   vertical-align: middle;
 }
@@ -66,7 +66,6 @@ td {
 .draggable-boat {
   width: 2em;
   height: 2em;
-  border: 1px solid black;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -88,15 +87,16 @@ td {
   }
 
   .player-text{
-    font-family: 'BubbleWaterRegular'
+    font-family: 'BubbleWaterRegular';
+    color: var(--white);
   }
 
   .boot-group{ 
-    transform: translate(2.5em, 0.5em);
+    transform: translate(2.2em, 0.5em);
   }
 
   .boot{
-  
+    margin: 0.4em;
   }
 
   #b1{
