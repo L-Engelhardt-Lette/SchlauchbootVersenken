@@ -47,6 +47,13 @@ button {
     transition-property: width, left;
   }
 
+  .boot-container{
+    padding: 2em 2em;
+    border-radius: 30px;
+    background: rgba(230,230,230, 0.25);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+  }
+
   #b1{
     size: 2em;
     height: 2em;
