@@ -9,7 +9,7 @@ function initializeBoard() {
       const cell = document.createElement("td");
       cell.style.width = "2em";
       cell.style.height = "2em";
-      cell.style.border = "1px solid black";
+      cell.style.border = "1px solid white";
       
       //const cellText = document.createTextNode(`${i}, ${j}`);
       //cell.appendChild(cellText);
