@@ -62,6 +62,10 @@ button {
     font-family: 'BubbleWaterRegular'
   }
 
+  .boot-group{ 
+    transform: translate(2.5em, 0.5em);
+  }
+
   .boot{
   
   }
@@ -69,6 +73,7 @@ button {
   #b1{
     size: 2em;
     height: 2em;
+    
   }
 
   #b2{
