@@ -51,6 +51,27 @@ button {
     transition-property: width, left;
   }
 
+  table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 2em;
+    height: 2em;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+  .draggable-boat {
+    width: 2em;
+    height: 2em;
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
   .boot-container{
     padding: 2em 2em;
     border-radius: 30px;
