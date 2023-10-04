@@ -5,11 +5,14 @@ html{
     --mid: #2ca6a4ff;
     --light: #00c2d1ff;
 }
+@font-face {
+  font-family: 'BubbleWaterRegular';
+  src: url('/font/BubbleWaterRegular.ttf');
+}
 /*  Buttons
 */
 button {
     font-size: 18px;
-    color: var(--black);
     font-family: inherit;
     font-weight: 800;
     cursor: pointer;
@@ -24,7 +27,7 @@ button {
   
   button:focus,
   button:hover {
-    color: var(--black);
+    color: var(--white);
   }
   
   button:focus:after,
@@ -41,10 +44,79 @@ button {
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: var(--black);
+    background-color: var(--white);
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
+  }
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 2em;
+  height: 2em;
+  border: 1px solid var(--white);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.draggable-boat {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.player1-container{
+  margin-left: 2em;
+}
+
+.player2-container{
+  margin-right: 2em;
+}
+
+  .boot-container{
+    padding: 2em 2em;
+    border-radius: 30px;
+    background: rgba(230,230,230, 0.25);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+  }
+
+  .player-text{
+    font-family: 'BubbleWaterRegular';
+    color: var(--white);
+  }
+
+  .boot-group{ 
+    transform: translate(2.2em, 0.5em);
+  }
+
+  .boot{
+    margin: 0.4em;
+  }
+
+  #b1{
+    size: 2em;
+    height: 2em;
+    
+  }
+
+  #b2{
+    size: 4em;
+    height: 4em;
+  }
+
+  #b3{
+    size: 6em;
+    height: 6em;
+  }
+
+  #b4{
+    size: 8em;
+    height: 8em;
   }
 /*  END
 */
