@@ -56,10 +56,10 @@ table{
   border-collapse: collapse;
 }
 .left-table{
-  padding-right: 2em;
+  padding-right: 3em;
 }
 .right-table{
-  padding-left: 2em;
+  padding-left: 3em;
 }
 .table-container {
   display: flex;
@@ -68,8 +68,6 @@ table{
   height: 100vh;
 }
 
-.table-div { 
-}
 
 td {
   width: 2em;
