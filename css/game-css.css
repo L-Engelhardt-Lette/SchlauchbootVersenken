@@ -151,3 +151,15 @@ td {
 }
 /*  END
 */
+#schusstext{
+    color: white;
+    font-family: 'BubbleWaterRegular';
+    font-size: larger;
+    font-weight: lighter;
+}
+#schussplayer{
+    color: white;
+    font-family: 'BubbleWaterRegular';
+    font-size: larger;
+    font-weight: lighter;
+}
