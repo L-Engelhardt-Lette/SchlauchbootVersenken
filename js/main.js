@@ -72,7 +72,7 @@ function drop(event) {
     const data = event.dataTransfer.getData("text");
     const boatSize = parseInt(data);
     const cell = event.target;
-
+    alert("dropdrop");
     if (!cell.hasAttribute("data-occupied")) {
         cell.setAttribute("data-occupied", "true");
 

@@ -28,7 +28,7 @@ rasterzellen.forEach(zelle => {
     zelle.addEventListener('drop', (e) => {
         // Das Standardverhalten des Browsers verhindern, um das Ablegen zu ermöglichen
         e.preventDefault();
-
+        alert("drop");
         // Die ID des gezogenen Schiffs aus den übertragenen Daten abrufen
         const schiffId = e.dataTransfer.getData('schiffId');
         // Das zugehörige Schiffelement anhand der ID finden
