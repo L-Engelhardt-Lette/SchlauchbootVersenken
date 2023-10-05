@@ -17,21 +17,17 @@
             <h2 class="player-text">Player 1</h2>
             <div class="boot-group">
                 <div class="boot">
-                    <img class="draggable-boat" id="b1" src="/img/ships_new/ship-1-blue.png" alt="boot-1-blau">
+                    <img class="draggable-boat" id="b1" src="/img/ships_new/ship-1-blue.png" alt="boot-1-blau" draggable="true" ondragstart="allowDrag(event)">
                 </div>
                 <div class="boot">
-                    <img class="draggable-boat" id="b2" src="/img/ships_new/ship-2-blue.png" alt="boot-2-blau">
+                    <img class="draggable-boat" id="b2" src="/img/ships_new/ship-2-blue.png" alt="boot-2-blau"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
                 <div class="boot">
-                    <img class="draggable-boat" id="b3" src="/img/ships_new/ship-3-blue.png" alt="boot-3-blau">
+                    <img class="draggable-boat" id="b3" src="/img/ships_new/ship-3-blue.png" alt="boot-3-blau"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
                 <div class="boot">
-                    <img class="draggable-boat" id="b4" src="/img/ships_new/ship-4-blue.png" alt="boot-4-blau">
+                    <img class="draggable-boat" id="b4" src="/img/ships_new/ship-4-blue.png" alt="boot-4-blau"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
-            </div>
-            <div class="rotate-buttons-div">
-                <button class="rotation-button"><i class="bi bi-arrow-clockwise rotation-icon"></i></button>
-                <button class="rotation-button"><i class="bi bi-arrow-counterclockwise rotation-icon"></i></button>
             </div>
         </div>
     </div>
@@ -40,27 +36,35 @@
             <h2 class="player-text">Player 2</h2>
             <div class="boot-group">
                 <div class="boot">
-                    <img class="draggable-boat" id="b1" src="/img/ships_new/ship-1-red.png" alt="boot-1-rot">
+                    <img class="draggable-boat" id="b1" src="/img/ships_new/ship-1-red.png" alt="boot-1-rot"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
                 <div class="boot">
-                    <img class="draggable-boat" id="b2" src="/img/ships_new/ship-2-red.png" alt="boot-2-rot">
+                    <img class="draggable-boat" id="b2" src="/img/ships_new/ship-2-red.png" alt="boot-2-rot"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
                 <div class="boot">
-                    <img class="draggable-boat" id="b3" src="/img/ships_new/ship-3-red.png" alt="boot-3-rot">
+                    <img class="draggable-boat" id="b3" src="/img/ships_new/ship-3-red.png" alt="boot-3-rot"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
                 <div class="boot">
-                    <img class="draggable-boat" id="b4" src="/img/ships_new/ship-4-red.png" alt="boot-4-rot">
+                    <img class="draggable-boat" id="b4" src="/img/ships_new/ship-4-red.png" alt="boot-4-rot"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
-            </div>
-            <div class="rotate-buttons-div">
-                <button class="rotation-button"><i class="bi bi-arrow-clockwise rotation-icon"></i></button>
-                <button class="rotation-button"><i class="bi bi-arrow-counterclockwise rotation-icon"></i></button>
             </div>
         </div>
     </div>
+    <!--
     <div class="table-container position-absolute top-50 start-50 translate-middle">
-        <div class="table-div" id="table"></div>
+        <div class="table-div" id="table" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
         <canvas id="bg-canvas" width="40%" height="40%"></canvas>
+    </div>
+    -->
+    <div class="position-absolute top-50 start-50 translate-middle table-container">
+        <div class="left-table">
+            <div id="table-player1"></div>
+            <canvas></canvas>
+        </div>
+        <div class="right-table">
+            <div id="table-player2"></div>
+            <canvas></canvas>
+        </div>
     </div>
     <!--END-->
 
@@ -97,5 +101,33 @@
     <!-- Include the separate JavaScript file -->
     <script src="/js/main.js"></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- In Ihrer HTML-Datei nach den anderen Script-Tags hinzufügen -->
+    <script>
+        // Funktion, um das Ziehen eines Boots zu aktivieren
+        function allowDrag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+
+        // Funktion, um das Ablegen eines Boots zu behandeln
+        function handleDrop(event) {
+            event.preventDefault();
+            var boatId = event.dataTransfer.getData("text");
+            var targetTable = document.getElementById("table");
+            var targetCell = event.target;
+
+            // Prüfen, ob das Boot in einer gültigen Zelle abgelegt wird
+            if (targetTable.contains(targetCell) && !targetCell.classList.contains("occupied")) {
+                // Setzen Sie das Boot in die Zelle und markieren Sie sie als belegt
+                targetCell.appendChild(document.getElementById(boatId));
+                targetCell.classList.add("occupied");
+            }
+        }
+
+        // Funktion, um das Standardverhalten des Browsers während des Drag-and-Drop-Vorgangs zu verhindern
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+    </script>
+
 </body>
 </html>
