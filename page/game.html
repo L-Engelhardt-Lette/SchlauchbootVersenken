@@ -111,12 +111,13 @@
     <script>
         // Funktion, um das Ziehen eines Boots zu aktivieren
         function allowDrag(event) {
+            
             event.dataTransfer.setData("text", event.target.id);
         }
 
         // Funktion, um das Ablegen eines Boots zu behandeln
         function handleDrop(event) {
-            alert("handleDrop");
+          
             event.preventDefault();
             var boatId = event.dataTransfer.getData("text");
             var targetTable = document.getElementById("table");
