@@ -91,3 +91,4 @@ function drop(event) {
     const draggedElement = document.getElementById(boatSize.toString());
     draggedElement.style.display = "none";
 }
+
