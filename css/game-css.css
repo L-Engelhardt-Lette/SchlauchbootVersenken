@@ -52,9 +52,22 @@ html{
     transition-property: width, left;
   }
 
-table {
+table{
   border-collapse: collapse;
 }
+.left-table{
+  padding-right: 3em;
+}
+.right-table{
+  padding-left: 3em;
+}
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 
 td {
   width: 2em;
