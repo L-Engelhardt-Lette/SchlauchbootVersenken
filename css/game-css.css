@@ -52,8 +52,14 @@ html{
     transition-property: width, left;
   }
 
-table {
+table{
   border-collapse: collapse;
+}
+.left-table{
+  padding-right: 2em;
+}
+.right-table{
+  padding-left: 2em;
 }
 
 td {
