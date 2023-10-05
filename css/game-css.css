@@ -61,6 +61,15 @@ table{
 .right-table{
   padding-left: 2em;
 }
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.table-div { 
+}
 
 td {
   width: 2em;

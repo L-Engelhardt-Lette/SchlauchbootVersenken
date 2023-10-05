@@ -7,7 +7,6 @@ function initializeBoard() {
 
     const tbl = document.createElement("table-player1");
 
-
     const tblBody = document.createElement("tbody");
 
     for (let i = 1; i <= 10; i++) {
@@ -31,8 +30,13 @@ function initializeBoard() {
 
     tbl.appendChild(tblBody);
 
-    const tableContainer = document.getElementById("table");
+    const tableContainer = document.getElementById("table-player1");
     tableContainer.appendChild(tbl);
+
+    // Create a second table for player 2
+    const tbl2 = tbl.cloneNode(true);
+    const tableContainer2 = document.getElementById("table-player2");
+    tableContainer2.appendChild(tbl2);
 
     // Store the original positions of draggable elements
     const draggableElements = document.querySelectorAll(".draggable-boat");
@@ -42,8 +46,10 @@ function initializeBoard() {
 }
 
 function resetBoard() {
-    const tableContainer = document.getElementById("table");
-    tableContainer.innerHTML = "";
+    const tableContainer1 = document.getElementById("table-player1");
+    const tableContainer2 = document.getElementById("table-player2");
+    tableContainer1.innerHTML = "";
+    tableContainer2.innerHTML = "";
 
     // Reset the tableGenerated flag
     tableGenerated = false;
@@ -62,26 +68,26 @@ function allowDrop(event) {
 }
 
 function drop(event) {
-  event.preventDefault();
-  const data = event.dataTransfer.getData("text");
-  const boatSize = parseInt(data);
-  const cell = event.target;
+    event.preventDefault();
+    const data = event.dataTransfer.getData("text");
+    const boatSize = parseInt(data);
+    const cell = event.target;
 
-  if (!cell.hasAttribute("data-occupied")) {
-      cell.setAttribute("data-occupied", "true");
+    if (!cell.hasAttribute("data-occupied")) {
+        cell.setAttribute("data-occupied", "true");
 
-      // Determine the team (red or blue) based on the data-team attribute
-      const team = cell.getAttribute("data-team");
-      
-      // Create an image element and set its source based on the team color
-      const img = document.createElement("img");
-      img.src = `/img/ships_new/ship-${boatSize}-${team}.png`;
+        // Determine the team (red or blue) based on the data-team attribute
+        const team = cell.getAttribute("data-team");
 
-      // Append the image to the cell
-      cell.appendChild(img);
-  }
+        // Create an image element and set its source based on the team color
+        const img = document.createElement("img");
+        img.src = `/img/ships_new/ship-${boatSize}-${team}.png`;
 
-  // Hide the dragged image
-  const draggedElement = document.getElementById(boatSize.toString());
-  draggedElement.style.display = "none";
+        // Append the image to the cell
+        cell.appendChild(img);
+    }
+
+    // Hide the dragged image
+    const draggedElement = document.getElementById(boatSize.toString());
+    draggedElement.style.display = "none";
 }
