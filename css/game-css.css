@@ -134,22 +134,8 @@ td {
     height: 8em;
   }
 
-.rotate-buttons-div{
-  padding-top: 1em;
-  padding-left: 30%;
-  width: 70%;
-  
-}
-
-.rotation-button{
-  background-color: rgba(0,0, 0, 0);
-  border: none;
-}
-
-.rotation-icon{
-  padding-left: 0.19em;
-  font-size: 1.5em;
-  color: var(--white); 
+.schussdiv{
+  margin-bottom: 10em;
 }
 /*  END
 */
