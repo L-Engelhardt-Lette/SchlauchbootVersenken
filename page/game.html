@@ -29,9 +29,9 @@
                     <img class="draggable-boat" id="b4" src="/img/ships_new/ship-4-blue.png" alt="boot-4-blau">
                 </div>
             </div>
-            <div class="rotate-buttons">
-                <i class="bi bi-arrow-clockwise rotation-buttons"></i>
-                <i class="bi bi-arrow-counterclockwise rotation-buttons"></i>
+            <div class="rotate-buttons-div">
+                <button class="rotation-button"><i class="bi bi-arrow-clockwise rotation-icon"></i></button>
+                <button class="rotation-button"><i class="bi bi-arrow-counterclockwise rotation-icon"></i></button>
             </div>
         </div>
     </div>
@@ -52,9 +52,9 @@
                     <img class="draggable-boat" id="b4" src="/img/ships_new/ship-4-red.png" alt="boot-4-rot">
                 </div>
             </div>
-            <div class="rotate-buttons">
-                <i class="bi bi-arrow-clockwise rotation-buttons"></i>
-                <i class="bi bi-arrow-counterclockwise rotation-buttons"></i>
+            <div class="rotate-buttons-div">
+                <button class="rotation-button"><i class="bi bi-arrow-clockwise rotation-icon"></i></button>
+                <button class="rotation-button"><i class="bi bi-arrow-counterclockwise rotation-icon"></i></button>
             </div>
         </div>
     </div>
@@ -70,19 +70,19 @@
             <div class="Game-Interface-Create">
                 <div class="row justify-content-center" style="padding-bottom: 0.7em;">
                     <div class=" " style="width: 200px;">
-                        <button class="footer" onclick="initializeBoard()"> 
+                        <button class="footer-button footer" onclick="initializeBoard()"> 
                             <span> Start Game
                             </span>
                         </button>
                     </div>
                     <div class=" " style="width: 200px;">
-                        <button class="footer" onclick="resetBoard()">
+                        <button class="footer-button footer" onclick="resetBoard()">
                             <span> Restart Game
                             </span>
                         </button>
                     </div>
                     <div class=" " style="width: 200px;">
-                        <button class="footer" onclick="window.location.href='/index.html';">
+                        <button class="footer footer-button" onclick="window.location.href='/index.html';">
                             <span> Back
                             </span>
                         </button>

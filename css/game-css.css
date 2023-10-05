@@ -11,10 +11,12 @@ html{
 }
 /*  Buttons
 */
-button {
+.footer-button {
+    
     font-size: 18px;
-    font-family: inherit;
-    font-weight: 800;
+    font-family: BubbleWaterRegular;
+    font-weight: 400;
+    color: var(--white);
     cursor: pointer;
     position: relative;
     border: none;
@@ -25,18 +27,18 @@ button {
     transition-property: color;
   }
   
-  button:focus,
-  button:hover {
-    color: var(--white);
+  .footer-button:focus,
+  .footer-button:hover {
+    color: var(--light);
   }
   
-  button:focus:after,
-  button:hover:after {
+  .footer-button:focus:after,
+  .footer-button:hover:after {
     width: 100%;
     left: 0%;
   }
   
-  button:after {
+  .footer-button:after {
     content: "";
     pointer-events: none;
     bottom: -2px;
@@ -44,7 +46,7 @@ button {
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: var(--white);
+    background-color: var(--light);
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
@@ -118,6 +120,24 @@ td {
     size: 8em;
     height: 8em;
   }
+
+.rotate-buttons-div{
+  padding-top: 1em;
+  padding-left: 30%;
+  width: 70%;
+  
+}
+
+.rotation-button{
+  background-color: rgba(0,0, 0, 0);
+  border: none;
+}
+
+.rotation-icon{
+  padding-left: 0.19em;
+  font-size: 1.5em;
+  color: var(--white); 
+}
 /*  END
 */
 
