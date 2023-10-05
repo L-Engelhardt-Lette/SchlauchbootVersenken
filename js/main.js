@@ -70,18 +70,22 @@ function allowDrop(event) {
 function drop(event) {
     event.preventDefault();
     const data = event.dataTransfer.getData("text");
+    
     const boatSize = parseInt(data);
     const cell = event.target;
-    alert("dropdrop");
+    
     if (!cell.hasAttribute("data-occupied")) {
         cell.setAttribute("data-occupied", "true");
 
         // Determine the team (red or blue) based on the data-team attribute
         const team = cell.getAttribute("data-team");
 
-        // Create an image element and set its source based on the team color
+        const img = document.getElementById(data);
+
+        /* Create an image element and set its source based on the team color
         const img = document.createElement("img");
         img.src = `/img/ships_new/ship-${boatSize}-${team}.png`;
+        */
 
         // Append the image to the cell
         cell.appendChild(img);

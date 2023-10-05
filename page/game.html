@@ -42,17 +42,23 @@
         <div class="boot-container">
             <h2 class="player-text">Player 2</h2>
             <div class="boot-group">
-                <div class="boot">
-                    <img class="draggable-boat" id="b1" src="/img/ships_new/ship-1-red.png" alt="boot-1-rot"  draggable="true" ondragstart="allowDrag(event)">
+                <div class="boot1">
+                    <img class="draggable-boat" id="b1" src="/img/new_ship_horizontal/ship-1-red.png" alt="boot-1-rot" draggable="true" ondragstart="allowDrag(event)">
                 </div>
-                <div class="boot">
-                    <img class="draggable-boat" id="b2" src="/img/ships_new/ship-2-red.png" alt="boot-2-rot"  draggable="true" ondragstart="allowDrag(event)">
+                <div class="boot2">
+                    <img class="draggable-boat" id="b2" src="/img/new_ship_horizontal/ship-2-red-p1.png" alt="boot-2-rot"  draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" id="b2" src="/img/new_ship_horizontal/ship-2-red-p2.png" alt="boot-2-rot"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
-                <div class="boot">
-                    <img class="draggable-boat" id="b3" src="/img/ships_new/ship-3-red.png" alt="boot-3-rot"  draggable="true" ondragstart="allowDrag(event)">
+                <div class="boot3">
+                    <img class="draggable-boat" id="b3" src="/img/new_ship_horizontal/ship-3-red-p1.png" alt="boot-3-rot"  draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" id="b3" src="/img/new_ship_horizontal/ship-3-red-p2.png" alt="boot-3-rot"  draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" id="b3" src="/img/new_ship_horizontal/ship-3-red-p3.png" alt="boot-3-rot"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
-                <div class="boot">
-                    <img class="draggable-boat" id="b4" src="/img/ships_new/ship-4-red.png" alt="boot-4-rot"  draggable="true" ondragstart="allowDrag(event)">
+                <div class="boot4">
+                    <img class="draggable-boat" id="b4" src="/img/new_ship_horizontal/ship-4-red-p1.png" alt="boot-4-rot"  draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" id="b4" src="/img/new_ship_horizontal/ship-4-red-p2.png" alt="boot-4-rot"  draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" id="b4" src="/img/new_ship_horizontal/ship-4-red-p3.png" alt="boot-4-rot"  draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" id="b4" src="/img/new_ship_horizontal/ship-4-red-p4.png" alt="boot-4-rot"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
             </div>
         </div>
@@ -121,12 +127,13 @@
     <script>
         // Funktion, um das Ziehen eines Boots zu aktivieren
         function allowDrag(event) {
+            
             event.dataTransfer.setData("text", event.target.id);
         }
 
         // Funktion, um das Ablegen eines Boots zu behandeln
         function handleDrop(event) {
-            alert("handleDrop");
+          
             event.preventDefault();
             var boatId = event.dataTransfer.getData("text");
             var targetTable = document.getElementById("table");
