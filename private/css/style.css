@@ -13,7 +13,9 @@ html{
     --hightlight: #FF4A1C;
     font-family: 'BubbleFont', sans-serif;
 }
-
+body, h1, h2, p{
+    font-family: 'BubbleFont';
+}
 .bg-img{
     background-image: url(/private/img/bg.jpg);
 }
@@ -23,6 +25,8 @@ html{
 /* 
     Start HTML
 */
+.body-start{
+}
 
 /* Header
 */
@@ -35,19 +39,87 @@ html{
     width: 400px;
 }
 .title-text{
+    color: var(--white);
     white-space: nowrap;
     font-size: 4em;
-    color: var(--white);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-/* End
-*/
-
 /* Main
 */
-
-/* End
+.Game-Interface-Start{
+    margin: auto;
+    width:14em;
+}
+.button-start {
+    color: var(--white);
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 2em;
+    border: 1px;
+    font-family: inherit;
+    text-transform: uppercase;
+    z-index: 1;
+}
+.button-start::before, .button-start::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--light);
+    transition: 0.5s ease;
+}
+.button-start::before {
+    top: -1em;
+    left: -1em;
+}
+.button-start::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+.button-start:hover::before, .button-start:hover::after {
+    height: 410px;
+    width: 410px;
+}
+.button-start:hover {
+    color: var(--white);
+}
+.button-start:active {
+    filter: brightness(.8);
+}
+#button-start-text{
+    font-family: 'BubbleFont';
+}
+/* Footer
 */
+#index-footer{
+    bottom: 100px;
+    padding-top: 0.5em;
+    margin-bottom: 0.3em;
+    border-radius: 1em;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+#creators{
+    color: var(--white);
+    font-size: 1.6em;
+    font-weight: 50;
+}
+#copyright{
+    color: var(--white);
+    margin-top: -10px;
+    padding-bottom: 0.5em;
+}
