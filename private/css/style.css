@@ -1,0 +1,21 @@
+/* Global Css
+*/
+@font-face {
+    font-family: 'BubbleFont';
+    src: url(/private/font/BubbleWaterRegular.ttf);
+}
+
+html{
+    --black: #191716;
+    --white: #FCFCFC;
+    --light: #5EB1BF;
+    --dark: #3066BE;
+    --hightlight: #FF4A1C;
+    font-family: 'BubbleFont', sans-serif;
+}
+
+.bg-img{
+    background-image: url(/private/img/bg.jpg);
+}
+/* End
+*/
