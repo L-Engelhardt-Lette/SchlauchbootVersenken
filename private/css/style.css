@@ -282,4 +282,4 @@ body, h1, h2, p{
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
-}   
+}  
