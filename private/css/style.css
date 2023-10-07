@@ -25,17 +25,44 @@ body, h1, h2, p{
 /* 
     Start HTML
 */
+#animatedTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    animation: changeTitle 3s infinite;
+}
+@keyframes changeTitle {
+    0%, 100% {
+        content: "\f21a Schlauchboot Versenken";
+    }
+    25% {
+        content: "\f21a S - Battleship";
+    }
+    50% {
+        content: "\f21a Sc - Battleship";
+    }
+    75% {
+        content: "\f21a Sch - Battleship";
+    }
+}
 .body-start{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    height: 100%;
 }
 
 /* Header
 */
 .title-div{
+    color: var(--white);
     text-align: center;
     margin: 0 auto;
     position: relative;
     text-align: center;
-    color: white;
     width: 400px;
 }
 .title-text{
@@ -105,7 +132,6 @@ body, h1, h2, p{
 /* Footer
 */
 #index-footer{
-    bottom: 100px;
     padding-top: 0.5em;
     margin-bottom: 0.3em;
     border-radius: 1em;
