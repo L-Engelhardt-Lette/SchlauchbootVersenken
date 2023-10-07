@@ -174,13 +174,13 @@ body, h1, h2, p{
 
 }
 .canvas-player1{
-    
+    z-index: 2;
 }
 .table-player2{
     
 }
 .canvas-player2{
-    
+    z-index: 2;
 }
 /* Footer
 */
