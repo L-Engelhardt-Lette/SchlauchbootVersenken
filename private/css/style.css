@@ -156,9 +156,32 @@ body, h1, h2, p{
     Game HTML
 */
 
+/* Main
+*/
+.main-game{
 
+}
+.table-container{
 
+}
+.div-player1{
 
+}
+.div-player2{
+
+}
+.table-player1{
+
+}
+.canvas-player1{
+    
+}
+.table-player2{
+    
+}
+.canvas-player2{
+    
+}
 /* Footer
 */
 .footer-button {
@@ -175,18 +198,15 @@ body, h1, h2, p{
     transition-duration: 400ms;
     transition-property: color;
 }
-  
 .footer-button:focus,
 .footer-button:hover {
     color: var(--light);
-}
-  
+} 
 .footer-button:focus:after,
 .footer-button:hover:after {
     width: 100%;
     left: 0%;
 }
-  
 .footer-button:after {
     content: "";
     pointer-events: none;
