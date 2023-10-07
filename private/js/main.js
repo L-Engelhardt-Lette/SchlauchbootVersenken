@@ -8,6 +8,9 @@ function changeTitle() {
 
 setInterval(changeTitle, 3000);
 
+/* Game HTML
+*/
+
 const Parser = require('expr-eval').Parser;
 // f(x) = 3x + 4
 // y = 3x + 2
