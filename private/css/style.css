@@ -4,7 +4,6 @@
     font-family: 'BubbleFont';
     src: url(/private/font/BubbleWaterRegular.ttf);
 }
-
 html{
     --black: #191716;
     --white: #FCFCFC;
@@ -21,7 +20,6 @@ body, h1, h2, p{
 }
 /* End
 */
-
 /* 
     Start HTML
 */
@@ -47,14 +45,6 @@ body, h1, h2, p{
         content: "\f21a Sch - Battleship";
     }
 }
-.body-start{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    height: 100%;
-}
-
 /* Header
 */
 .title-div{
@@ -149,13 +139,9 @@ body, h1, h2, p{
     margin-top: -10px;
     padding-bottom: 0.5em;
 }
-
-
-
 /* 
     Game HTML
 */
-
 /* Main
 */
 .main-game{
