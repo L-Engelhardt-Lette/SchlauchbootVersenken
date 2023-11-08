@@ -1,0 +1,285 @@
+/* Global Css
+*/
+@font-face {
+    font-family: 'BubbleFont';
+    src: url(/private/font/BubbleWaterRegular.ttf);
+}
+html{
+    --black: #191716;
+    --white: #FCFCFC;
+    --light: #5EB1BF;
+    --dark: #3066BE;
+    --hightlight: #FF4A1C;
+    font-family: 'BubbleFont', sans-serif;
+}
+body, h1, h2, p{
+    font-family: 'BubbleFont';
+}
+.bg-img{
+    background-image: url(/private/img/bg.jpg);
+}
+/* End
+*/
+/* 
+    Start HTML
+*/
+#animatedTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    animation: changeTitle 3s infinite;
+}
+@keyframes changeTitle {
+    0%, 100% {
+        content: "\f21a Schlauchboot Versenken";
+    }
+    25% {
+        content: "\f21a S - Battleship";
+    }
+    50% {
+        content: "\f21a Sc - Battleship";
+    }
+    75% {
+        content: "\f21a Sch - Battleship";
+    }
+}
+/* Header
+*/
+.title-div{
+    color: var(--white);
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 400px;
+}
+.title-text{
+    color: var(--white);
+    white-space: nowrap;
+    font-size: 4em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Main
+*/
+.Game-Interface-Start{
+    margin: auto;
+    width:14em;
+}
+.button-start {
+    color: var(--white);
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 2em;
+    border: 1px;
+    font-family: inherit;
+    text-transform: uppercase;
+    z-index: 1;
+}
+.button-start::before, .button-start::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--light);
+    transition: 0.5s ease;
+}
+.button-start::before {
+    top: -1em;
+    left: -1em;
+}
+.button-start::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+.button-start:hover::before, .button-start:hover::after {
+    height: 410px;
+    width: 410px;
+}
+.button-start:hover {
+    color: var(--white);
+}
+.button-start:active {
+    filter: brightness(.8);
+}
+#button-start-text{
+    font-family: 'BubbleFont';
+}
+/* Footer
+*/
+#index-footer{
+    padding-top: 0.5em;
+    margin-bottom: 0.3em;
+    border-radius: 1em;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+#creators{
+    color: var(--white);
+    font-size: 1.6em;
+    font-weight: 50;
+}
+#copyright{
+    color: var(--white);
+    margin-top: -10px;
+    padding-bottom: 0.5em;
+}
+/* 
+    Game HTML
+*/
+/* Header
+*/
+.game-title{
+    font-weight: 400;
+    font-size: 2em;
+}
+/* Main
+*/
+.main-game{
+
+}
+.table-container{
+
+}
+.div-player1{
+
+}
+.div-player2{
+
+}
+.table-player1{
+
+}
+.canvas-player1{
+    z-index: 2;
+}
+.table-player2{
+    
+}
+.canvas-player2{
+    z-index: 2;
+}
+.input-div{
+
+}
+
+
+
+.input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.input:hover,
+.input:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+.schuss-button {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    width: 120px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transform: skew(-21deg);
+  }
+  
+  #schuss-button-text {
+    font-family: 'BubbleFont';
+    font-weight: 70;
+    display: inline-block;
+    transform: skew(21deg);
+  }
+  
+  .schuss-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    background: rgb(20, 20, 20);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  
+  .schuss-button:hover {
+    color: #fff;
+  }
+  
+  .schuss-button:hover::before {
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+/* Footer
+*/
+.game-footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+}
+.footer-button {
+    font-family: 'BubbleFont';
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--white);
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+.footer-button:focus,
+.footer-button:hover {
+    color: var(--light);
+} 
+.footer-button:focus:after,
+.footer-button:hover:after {
+    width: 100%;
+    left: 0%;
+}
+.footer-button:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--light);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}  
