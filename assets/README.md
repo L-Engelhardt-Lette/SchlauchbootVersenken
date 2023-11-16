@@ -1,2 +1,0 @@
-# SchlauchbootVersenken
-PrAni Projekt
