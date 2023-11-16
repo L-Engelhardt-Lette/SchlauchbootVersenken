@@ -146,10 +146,5 @@ function fireShot(){
         // Handle den Fehler, wenn die Formel nicht korrekt ist
     }
 }
-// Vergleich der Gleichungen
-if (schuss === schiff) {
-  console.log("Die Gleichungen sind gleich.");
-} else {
-  console.log("Die Gleichungen sind nicht gleich.");
-}
+
 
