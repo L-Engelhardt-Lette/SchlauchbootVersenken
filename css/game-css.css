@@ -82,10 +82,14 @@ td {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
+  display: inline; /* Änderung hier: inline statt inline-block */
+  background-size: cover; /* Dies stellt sicher, dass das Hintergrundbild das gesamte Element abdeckt */
+  margin-right: 5px; /* Fügt einen Abstand zwischen den Booten hinzu */
 }
 
 .player1-container{
   margin-left: 2em;
+  list-style-image: 100%;
 }
 
 .player2-container{
