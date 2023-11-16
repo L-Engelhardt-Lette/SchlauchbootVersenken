@@ -90,7 +90,7 @@ function drop(event) {
         // Set the size of the image to match the cell size
         img.style.width = "100%";
         img.style.height = "100%";
-        
+
         // Append the image to the cell
         cell.appendChild(img);
     }
@@ -98,5 +98,58 @@ function drop(event) {
     // Hide the dragged image
     const draggedElement = document.getElementById(boatSize.toString());
     draggedElement.style.display = "none";
+}
+// Gleichungen
+let m = 0;
+
+let b = 0;
+
+let schuss = function f(x){
+    return m*x+0;
+} 
+let schiff = function g(x){
+    return 0*x+b;
+}
+
+function showShot(x){
+    const y = f(x);
+}
+function checkIntersection() {
+    const xIntersection = (b-0)/(m-0);
+    const yIntersection1 = schuss(xIntersection);
+    const yIntersection2 = schiff(xIntersection);
+
+    console.log(`Die Funktionen schneiden sich bei (${xIntersection}, ${yIntersection1}) und (${xIntersection}, ${yIntersection2}).`);
+}
+function fireShot(){
+    const schussFormelInput = document.getElementById("schussFormel");
+    const schussFormel = schussFormelInput.value;
+    try {
+        const parsedFormel = new Function('x', `return ${schussFormel}`);
+        const x = 3; // Beispielwert für x, du kannst dies anpassen
+        const y = parsedFormel(x);
+
+        // Hier fügst du den Code ein, um den Schuss auf dem Spielfeld anzuzeigen
+        console.log(`Schuss abgefeuert auf Position (${x}, ${y})`);
+
+        // Vergleiche die Gleichungen
+        if (schuss.toString() === schiff.toString()) {
+            console.log("Die Gleichungen sind gleich.");
+        } else {
+            console.log("Die Gleichungen sind nicht gleich.");
+        }
+
+        schussFormelInput.value = ""; // Zurücksetzen der Eingabe
+
+    } catch (error) {
+        console.error("Fehler beim Auswerten der Formel:", error);
+        // Handle den Fehler, wenn die Formel nicht korrekt ist
+    }
+}
+// Vergleich der Gleichungen
+if (schuss === schiff) {
+  console.log("Die Gleichungen sind gleich.");
+} else {
+  console.log("Die Gleichungen sind nicht gleich.");
 }
 
