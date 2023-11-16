@@ -20,10 +20,11 @@
                 <div class="boot1">
                     <img class="draggable-boat" id="b1" src="/img/new_ship_horizontal/ship-1-blue.png" alt="boot-1-blau" draggable="true" ondragstart="allowDrag(event)">
                 </div>
-                <div class="boot2">
-                    <img class="draggable-boat" id="b2" src="/img/new_ship_horizontal/ship-2-blue-p1.png" alt="boot-2-blau"  draggable="true" ondragstart="allowDrag(event)">
-                    <img class="draggable-boat" id="b2" src="/img/new_ship_horizontal/ship-2-blue-p2.png" alt="boot-2-blau"  draggable="true" ondragstart="allowDrag(event)">
+                <div class="boot2" id="boat2Container">
+                    <img class="draggable-boat" src="/img/new_ship_horizontal/ship-2-blue-p1.png" alt="boot-2-blau"  draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" src="/img/new_ship_horizontal/ship-2-blue-p2.png" alt="boot-2-blau"  draggable="true" ondragstart="allowDrag(event)">
                 </div>
+                
                 <div class="boot3">
                     <img class="draggable-boat" id="b3" src="/img/new_ship_horizontal/ship-3-blue-p1.png" alt="boot-3-blau"  draggable="true" ondragstart="allowDrag(event)">
                     <img class="draggable-boat" id="b3" src="/img/new_ship_horizontal/ship-3-blue-p2.png" alt="boot-3-blau"  draggable="true" ondragstart="allowDrag(event)">
@@ -128,31 +129,49 @@
     <script>
         // Funktion, um das Ziehen eines Boots zu aktivieren
         function allowDrag(event) {
-            
-            event.dataTransfer.setData("text", event.target.id);
+            // Änderung: Setze die ID des übergeordneten Containers
+            event.dataTransfer.setData("text", event.target.parentElement.id);
         }
-
+    
         // Funktion, um das Ablegen eines Boots zu behandeln
         function handleDrop(event) {
-          
             event.preventDefault();
-            var boatId = event.dataTransfer.getData("text");
+            var containerId = event.dataTransfer.getData("text");
             var targetTable = document.getElementById("table");
             var targetCell = event.target;
-
-            // Prüfen, ob das Boot in einer gültigen Zelle abgelegt wird
+    
+            // Prüfen, ob die Zielzelle gültig ist
             if (targetTable.contains(targetCell) && !targetCell.classList.contains("occupied")) {
-                // Setzen Sie das Boot in die Zelle und markieren Sie sie als belegt
-                targetCell.appendChild(document.getElementById(boatId));
-                targetCell.classList.add("occupied");
+                var draggedContainer = document.getElementById(containerId);
+    
+                // Änderung: Setze die Position des Containers
+                draggedContainer.style.position = "absolute";
+                draggedContainer.style.left = (event.clientX - draggedContainer.clientWidth / 2) + "px";
+                draggedContainer.style.top = (event.clientY - draggedContainer.clientHeight / 2) + "px";
+    
+                // Änderung: Überprüfe, ob genügend Platz für zwei Zellen vorhanden ist
+                var targetCellIndex = Array.from(targetTable.getElementsByTagName("td")).indexOf(targetCell);
+                if (targetCellIndex < targetTable.getElementsByTagName("td").length - 1) {
+                    var nextCell = targetTable.getElementsByTagName("td")[targetCellIndex + 1];
+    
+                    // Überprüfe, ob die nächste Zelle gültig ist
+                    if (!nextCell.classList.contains("occupied")) {
+                        // Füge den Container in die beiden Zellen ein und markiere sie als belegt
+                        targetCell.appendChild(draggedContainer);
+                        targetCell.classList.add("occupied");
+                        nextCell.appendChild(draggedContainer.cloneNode(true));
+                        nextCell.classList.add("occupied");
+                    }
+                }
             }
         }
-
+    
         // Funktion, um das Standardverhalten des Browsers während des Drag-and-Drop-Vorgangs zu verhindern
         function handleDragOver(event) {
             event.preventDefault();
         }
     </script>
+    
 
 </body>
 </html>
