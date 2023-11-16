@@ -66,10 +66,10 @@
     <div class="schussdiv">
         <span id="schusstext">Player <span id="schussplayer">Player 1</span> ist jetzt dran</span>
         <div class="input-group">
-            <input required="" type="text" name="text" autocomplete="off" class="input">
+            <input required="" type="text" name="text" autocomplete="off" class="input" id="schussFormel">
             <label class="user-label">Bitte Formel fürs schießen eingeben</label>
         </div>
-        <button class="schussbutton">
+        <button class="schussbutton" onclick="fireShot()">
             <span>Schießen</span><i></i>
         </button>
     </div>
@@ -121,7 +121,7 @@
     <!--END-->
 
     <!-- Include the separate JavaScript file -->
-    <script src="/js/main.js"></script>
+    <script src="/js/combined_schiffe_versenken_updated.js"></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <!-- In Ihrer HTML-Datei nach den anderen Script-Tags hinzufügen -->
     <script>
