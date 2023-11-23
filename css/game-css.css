@@ -168,7 +168,16 @@ td {
     font-size: larger;
     font-weight: lighter;
 }
+#canvas-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 800px; /* Ändere den Wert nach Bedarf */
+  margin-left: 800px;
+}
+
 #schussCanvas {
-  width: 100%;
-  height: 100%;
+  width: 100%; /* Ändere die Breite nach Bedarf */
+  height: 100%; /* Ändere die Höhe nach Bedarf */
+  position: relative;
 }
