@@ -45,6 +45,9 @@ function initializeBoard() {
     draggableElements.forEach(element => {
         originalPositions[element.id] = { x: element.style.left, y: element.style.top };
     });
+
+    // Initialisiere die Canvas-Elemente
+    initializeCanvas();
 }
 
 function resetBoard() {
@@ -63,7 +66,11 @@ function resetBoard() {
         element.style.left = originalPosition.x;
         element.style.top = originalPosition.y;
     });
+
+    // Lösche die Canvas-Elemente
+    resetCanvas();
 }
+
 function initializeCanvas() {
     const canvas = document.createElement("canvas");
     const canvasContainer = document.getElementById("canvas-container");
@@ -75,6 +82,7 @@ function initializeCanvas() {
     canvas.style.top = "0";
     canvas.style.left = "0";
     canvas.style.zIndex = "1";
+    canvas.style.pointerEvents = "none"; // Verhindert, dass das Canvas Benutzerinteraktionen abfängt
 
     canvasContainer.appendChild(canvas);
 }
@@ -123,18 +131,6 @@ function drop(event) {
     const draggedElement = document.getElementById(boatSize.toString());
     draggedElement.style.display = "none";
 }
-// Diese Funktion wird aufgerufen, wenn der Schussbutton gedrückt wird
-function onSchussButtonClicked() {
-    const schussFormelInput = document.getElementById("schussFormel");
-    const schussFormel = schussFormelInput.value;
-
-    // Beispiel: Schuss auf das Spielfeld mit der eingegebenen Formel
-    fireShot(schussFormel);
-}
-
-// Füge einen Event Listener zum Schussbutton hinzu
-const schussButton = document.getElementById("schussButton");
-schussButton.addEventListener("click", onSchussButtonClicked);
 
 function fireShot(formula) {
     const schussFormelInput = document.getElementById("schussFormel");
@@ -143,17 +139,18 @@ function fireShot(formula) {
     try {
         const parsedFormel = new Function('x', `return ${schussFormel}`);
         
-        // Iterate through each cell to check for hits
+        // Zeichne die Linie auf dem Canvas
+        drawLine(parsedFormel);
+
+        // Beispiel: Schuss auf das Spielfeld mit der eingegebenen Formel
         for (let i = 1; i <= 10; i++) {
-            for (let j = 1; j <= 10; j++) {
-                const x = j;
-                const y = parsedFormel(x);
-                
-                // Check if the shot hits a ship
-                if (checkHit(x, y)) {
-                    console.log(`Hit at position (${x}, ${y})!`);
-                    // Additional logic for a hit, e.g., marking the cell as hit
-                }
+            const x = i;
+            const y = parsedFormel(x);
+
+            // Überprüfe, ob der Schuss ein Schiff getroffen hat
+            if (checkHit(x, y)) {
+                console.log(`Hit at position (${x}, ${y})!`);
+                // Weitere Logik für einen Treffer, z.B. das Markieren der Zelle als getroffen
             }
         }
 
@@ -186,18 +183,19 @@ function drawLine(equation) {
 }
 
 function checkHit(x, y) {
-    // Check each ship for a hit
+    // Überprüfe jedes Schiff auf einen Treffer
     const ships = document.querySelectorAll(".draggable-boat");
     for (const ship of ships) {
         const shipRow = parseInt(ship.getAttribute("data-ship-row"));
         const shipCol = parseInt(ship.getAttribute("data-ship-col"));
 
         if (x === shipCol && y === shipRow) {
-            return true; // Hit!
+            return true; // Treffer!
         }
     }
 
-    return false; // No hit
+    return false; // Kein Treffer
 }
 
-
+// Beispiel: Schuss auf das Spielfeld mit der Formel "2*x+1"
+fireShot("2*x+1");
