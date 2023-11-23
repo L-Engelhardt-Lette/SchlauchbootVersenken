@@ -144,6 +144,15 @@ function drop(event) {
     const draggedElement = document.getElementById(boatSize.toString());
     draggedElement.style.display = "none";
 }
+const schussButton = document.getElementById("schussButton");
+schussButton.addEventListener("click", onSchussButtonClicked);
+
+function onSchussButtonClicked() {
+    console.log("Schussbutton wurde gedrückt!");
+    const schussFormelInput = document.getElementById("schussFormel");
+    const schussFormel = schussFormelInput.value;
+    fireShot(schussFormel);
+}
 
 function fireShot(formula) {
     const schussFormelInput = document.getElementById("schussFormel");
@@ -174,6 +183,7 @@ function fireShot(formula) {
         // Handle den Fehler, wenn die Formel nicht korrekt ist
     }
 }
+
 
 function drawLine(equation) {
     const canvas = document.getElementById("schussCanvas");
