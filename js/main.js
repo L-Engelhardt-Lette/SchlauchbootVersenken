@@ -56,7 +56,7 @@ function resetImages() {
 
     // Durch alle Bilder iterieren und die Quelle zurücksetzen
     for (var i = 0; i < images.length; i++) {
-        images[i].src = ""; // Leere Quelle, um das Bild zu entfernen
+        //images[i].src; // Leere Quelle, um das Bild zu entfernen
     }
 }
 
