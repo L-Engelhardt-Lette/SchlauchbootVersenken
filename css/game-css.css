@@ -82,10 +82,15 @@ td {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
+   /*display: inline; Änderung hier: inline statt inline-block */
+   /* background-size: cover; Dies stellt sicher, dass das Hintergrundbild das gesamte Element abdeckt */
+   /*margin-right: 5px; Fügt einen Abstand zwischen den Booten hinzu */
+   /* object-fit: cover; Hinzugefügte Regel für die Objektausrichtung */
 }
 
 .player1-container{
   margin-left: 2em;
+  list-style-image: 100%;
 }
 
 .player2-container{
@@ -104,9 +109,12 @@ td {
     color: var(--white);
   }
 
-  .boot-group{ 
-    transform: translate(2.2em, 0.5em);
-  }
+  .boot-group img {
+    width: 2em;
+    height: 2em;
+    margin-right: 5px;
+    object-fit: cover;
+}
 
   .boot{
     margin: 0.4em;
