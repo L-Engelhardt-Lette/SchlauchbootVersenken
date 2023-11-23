@@ -20,10 +20,14 @@
                 <div class="boot1">
                     <img class="draggable-boat" id="b1" src="/img/new_ship_horizontal/ship-1-blue.png" alt="boot-1-blau" draggable="true" ondragstart="allowDrag(event)">
                 </div>
-                <div class="boot2" id="boat2Container">
-                    <img class="draggable-boat" src="/img/new_ship_horizontal/ship-2-blue-p1.png" alt="boot-2-blau"  draggable="true" ondragstart="allowDrag(event)">
-                    <img class="draggable-boat" src="/img/new_ship_horizontal/ship-2-blue-p2.png" alt="boot-2-blau"  draggable="true" ondragstart="allowDrag(event)">
+                <div class="boot2" id="boat2Container" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
+                    <img class="draggable-boat" id="b2p1" src="/img/new_ship_horizontal/ship-2-blue-p1.png" alt="boot-2-blau" draggable="true" ondragstart="allowDrag(event)">
+                    <img class="draggable-boat" id="b2p2" src="/img/new_ship_horizontal/ship-2-blue-p2.png" alt="boot-2-blau" draggable="true" ondragstart="allowDrag(event)">
                 </div>
+                
+                
+                
+                
                 
                 <div class="boot3">
                     <img class="draggable-boat" id="b3" src="/img/new_ship_horizontal/ship-3-blue-p1.png" alt="boot-3-blau"  draggable="true" ondragstart="allowDrag(event)">
@@ -65,7 +69,7 @@
         </div>
     </div>
     <div class="schussdiv">
-        <span id="schusstext">Player <span id="schussplayer">Player 1</span> ist jetzt dran</span>
+        <span id="schusstext">Player <span id="schussplayer">Player 1</span>ist jetzt dran</span>
         <div class="input-group">
             <input required="" type="text" name="text" autocomplete="off" class="input">
             <label class="user-label">Bitte Formel fürs schießen eingeben</label>
@@ -127,50 +131,41 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <!-- In Ihrer HTML-Datei nach den anderen Script-Tags hinzufügen -->
     <script>
-        // Funktion, um das Ziehen eines Boots zu aktivieren
         function allowDrag(event) {
-            // Änderung: Setze die ID des übergeordneten Containers
-            event.dataTransfer.setData("text", event.target.parentElement.id);
+            event.dataTransfer.setData("text", event.target.id);
+            event.dataTransfer.setData("offsetX", event.offsetX);
         }
     
-        // Funktion, um das Ablegen eines Boots zu behandeln
         function handleDrop(event) {
             event.preventDefault();
-            var containerId = event.dataTransfer.getData("text");
+            var boatId = event.dataTransfer.getData("text");
+            var offsetX = parseInt(event.dataTransfer.getData("offsetX"));
             var targetTable = document.getElementById("table");
             var targetCell = event.target;
     
-            // Prüfen, ob die Zielzelle gültig ist
             if (targetTable.contains(targetCell) && !targetCell.classList.contains("occupied")) {
-                var draggedContainer = document.getElementById(containerId);
+                var draggedBoatPart = document.getElementById(boatId);
     
-                // Änderung: Setze die Position des Containers
-                draggedContainer.style.position = "absolute";
-                draggedContainer.style.left = (event.clientX - draggedContainer.clientWidth / 2) + "px";
-                draggedContainer.style.top = (event.clientY - draggedContainer.clientHeight / 2) + "px";
+                // Füge das Bootteil in die Zelle ein und markiere sie als belegt
+                targetCell.appendChild(draggedBoatPart);
+                targetCell.classList.add("occupied");
     
-                // Änderung: Überprüfe, ob genügend Platz für zwei Zellen vorhanden ist
-                var targetCellIndex = Array.from(targetTable.getElementsByTagName("td")).indexOf(targetCell);
-                if (targetCellIndex < targetTable.getElementsByTagName("td").length - 1) {
-                    var nextCell = targetTable.getElementsByTagName("td")[targetCellIndex + 1];
-    
-                    // Überprüfe, ob die nächste Zelle gültig ist
-                    if (!nextCell.classList.contains("occupied")) {
-                        // Füge den Container in die beiden Zellen ein und markiere sie als belegt
-                        targetCell.appendChild(draggedContainer);
-                        targetCell.classList.add("occupied");
-                        nextCell.appendChild(draggedContainer.cloneNode(true));
-                        nextCell.classList.add("occupied");
-                    }
-                }
+                // Berücksichtige den Offset, um das Bootteil korrekt zu positionieren
+                draggedBoatPart.style.left = (event.clientX - offsetX - targetCell.getBoundingClientRect().left) + "px";
             }
         }
     
-        // Funktion, um das Standardverhalten des Browsers während des Drag-and-Drop-Vorgangs zu verhindern
         function handleDragOver(event) {
             event.preventDefault();
         }
     </script>
+    
+    
+    
+    
+    
+    
+    
     
 
 </body>
