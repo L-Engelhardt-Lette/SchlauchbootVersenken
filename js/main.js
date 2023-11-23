@@ -47,6 +47,16 @@ function initializeBoard() {
     });
 }
 
+function resetImages() {
+    // Alle Bilder mit der CSS-Klasse "reset-image" abrufen
+    var images = document.getElementsByClassName("draggable-boat");
+
+    // Durch alle Bilder iterieren und die Quelle zurücksetzen
+    for (var i = 0; i < images.length; i++) {
+        images[i].src = "draggable-boat"; // Leere Quelle, um das Bild zu entfernen
+    }
+}
+
 function resetBoard() {
     const tableContainer1 = document.getElementById("table-player1");
     const tableContainer2 = document.getElementById("table-player2");
@@ -63,6 +73,7 @@ function resetBoard() {
         element.style.left = originalPosition.x;
         element.style.top = originalPosition.y;
     });
+    resetImages();
 }
 
 function allowDrop(event) {
