@@ -64,6 +64,29 @@ function resetBoard() {
         element.style.top = originalPosition.y;
     });
 }
+function initializeCanvas() {
+    const canvas = document.createElement("canvas");
+    const canvasContainer = document.getElementById("canvas-container");
+
+    canvas.id = "schussCanvas";
+    canvas.width = canvasContainer.offsetWidth;
+    canvas.height = canvasContainer.offsetHeight;
+    canvas.style.position = "absolute";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.zIndex = "1";
+
+    canvasContainer.appendChild(canvas);
+}
+
+function resetCanvas() {
+    const canvas = document.getElementById("schussCanvas");
+    const canvasContainer = document.getElementById("canvas-container");
+
+    if (canvas) {
+        canvasContainer.removeChild(canvas);
+    }
+}
 
 function allowDrop(event) {
     event.preventDefault();
@@ -112,6 +135,7 @@ function onSchussButtonClicked() {
 // Füge einen Event Listener zum Schussbutton hinzu
 const schussButton = document.getElementById("schussButton");
 schussButton.addEventListener("click", onSchussButtonClicked);
+
 function fireShot(formula) {
     const schussFormelInput = document.getElementById("schussFormel");
     const schussFormel = formula || schussFormelInput.value;
@@ -141,6 +165,26 @@ function fireShot(formula) {
     }
 }
 
+function drawLine(equation) {
+    const canvas = document.getElementById("schussCanvas");
+    if (canvas) {
+        const context = canvas.getContext("2d");
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        context.beginPath();
+        context.moveTo(0, equation(0));
+        for (let x = 0; x <= canvas.width; x += 5) {
+            const y = equation(x);
+            context.lineTo(x, y);
+        }
+
+        context.strokeStyle = "red";
+        context.lineWidth = 2;
+        context.stroke();
+    }
+}
+
 function checkHit(x, y) {
     // Check each ship for a hit
     const ships = document.querySelectorAll(".draggable-boat");
@@ -156,5 +200,4 @@ function checkHit(x, y) {
     return false; // No hit
 }
 
-// Beispiel: Schuss auf das Spielfeld mit der Formel "2*x+1"
-fireShot("2*x+1");
+
