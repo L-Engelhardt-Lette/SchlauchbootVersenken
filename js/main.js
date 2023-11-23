@@ -90,7 +90,7 @@ function drop(event) {
         // Set the size of the image to match the cell size
         img.style.width = "100%";
         img.style.height = "100%";
-
+        
         // Append the image to the cell
         cell.appendChild(img);
     }
