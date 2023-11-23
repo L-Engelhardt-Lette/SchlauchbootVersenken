@@ -168,3 +168,7 @@ td {
     font-size: larger;
     font-weight: lighter;
 }
+#schussCanvas {
+  width: 100%;
+  height: 100%;
+}
