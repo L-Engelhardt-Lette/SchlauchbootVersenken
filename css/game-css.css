@@ -139,9 +139,7 @@ td {
     height: 2em;
   }
 
-.schussdiv{
-  margin-bottom: 10em;
-}
+
 /*  END
 */
 
@@ -168,3 +166,31 @@ td {
     font-size: larger;
     font-weight: lighter;
 }
+#canvas-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 50px auto 0;
+}
+
+#schussCanvas {
+  width: 100%; /* Ändere die Breite nach Bedarf */
+  height: 100%; /* Ändere die Höhe nach Bedarf */
+  position: relative;
+}
+/*.schussdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Dies sorgt dafür, dass der Bereich die volle Höhe des Bildschirms einnimmt */
+/*}
+
+.input-group {
+  margin-top: 20px; /* Verändere diesen Wert nach Bedarf */
+/*}
+
+.schussbutton {
+  margin-top: 20px; /* Verändere diesen Wert nach Bedarf */
+/*}*/
