@@ -78,9 +78,12 @@
     </div>
     <div class="schussdiv position-absolute top-50 start-50 translate-middle">
         <span id="schusstext">Player <span id="schussplayer">Player 1</span> ist jetzt dran </span>
-        <div class="input-group">
-            <input required="" type="text" name="text" autocomplete="off" class="input" id="schussFormel" placeholder="Bitte Formel eingeben">
-            
+        <div id="formelcontainer">
+            <span id="schusstext">f(x)=
+                <input class="schussinputfield" required="" type="text" name="text" autocomplete="off" class="input" id="schussEingabeM" placeholder="m">
+                <span id="schusstext">*X+</span>
+                <input class="schussinputfield" required="" type="text" name="text" autocomplete="off" class="input" id="schussEingabeB" placeholder="b">
+            </span>
         </div>
         <button class="schussbutton" onclick="fireShot()">
             <span>Schießen</span><i></i>

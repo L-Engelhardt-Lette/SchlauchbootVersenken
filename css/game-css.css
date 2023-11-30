@@ -237,25 +237,18 @@ td {
   height: 100%; /* Ändere die Höhe nach Bedarf */
   position: relative;
 }
-/*.schussdiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Dies sorgt dafür, dass der Bereich die volle Höhe des Bildschirms einnimmt */
-/*}
 
-.input-group {
-  margin-top: 20px; /* Verändere diesen Wert nach Bedarf */
-/*}
-
-.schussbutton {
-  margin-top: 20px; /* Verändere diesen Wert nach Bedarf */
-/*}*/
 .schussdiv{
   margin-top: 10em;
   z-index: 3;
   font-size: larger;
+  text-align: center;
+}
+#formelcontainer{
+
+}
+.schussinputfield{
+  width: 1.5em;
   text-align: center;
 }
 .schussbutton{
