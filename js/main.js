@@ -46,17 +46,17 @@ function initializeBoard() {
         originalPositions[element.id] = { x: element.style.left, y: element.style.top };
     });
 
-    // Initialisiere die Canvas-Elemente
+    // Initialize the Canvas elements
     initializeCanvas();
 }
 
 function resetImages() {
-    // Alle Bilder mit der CSS-Klasse "reset-image" abrufen
+    // Get all images with the CSS class "draggable-boat"
     var images = document.getElementsByClassName("draggable-boat");
 
-    // Durch alle Bilder iterieren und die Quelle zurücksetzen
+    // Iterate through all images and reset the source
     for (var i = 0; i < images.length; i++) {
-        //images[i].src; // Leere Quelle, um das Bild zu entfernen
+        images[i].style.display = "block"; // Make the image visible again
     }
 }
 
@@ -80,7 +80,7 @@ function resetBoard() {
     // Reset the images by calling the resetImages function
     resetImages();
 
-    // Lösche die Canvas-Elemente
+    // Clear the Canvas elements
     resetCanvas();
 }
 
@@ -95,7 +95,7 @@ function initializeCanvas() {
     canvas.style.top = "0";
     canvas.style.left = "0";
     canvas.style.zIndex = "1";
-    canvas.style.pointerEvents = "none"; // Verhindert, dass das Canvas Benutzerinteraktionen abfängt
+    canvas.style.pointerEvents = "none"; // Prevents the canvas from intercepting user interactions
 
     canvasContainer.appendChild(canvas);
 }
@@ -116,10 +116,10 @@ function allowDrop(event) {
 function drop(event) {
     event.preventDefault();
     const data = event.dataTransfer.getData("text");
-    
+
     const boatSize = parseInt(data);
     const cell = event.target;
-    
+
     if (!cell.hasAttribute("data-occupied")) {
         cell.setAttribute("data-occupied", "true");
 
@@ -152,27 +152,31 @@ function drop(event) {
     const draggedElement = document.getElementById(boatSize.toString());
     draggedElement.style.display = "none";
 }
-const schussButton = document.getElementById("schussButton");
+
+const schussButton = document.querySelector(".schussbutton");
 schussButton.addEventListener("click", onSchussButtonClicked);
 
 function onSchussButtonClicked() {
     console.log("Schussbutton wurde gedrückt!");
-    const schussFormelInput = document.getElementById("schussFormel");
-    const schussFormel = schussFormelInput.value;
-    fireShot(schussFormel);
+
+    const schussEingabeM = document.getElementById("schussEingabeM").value;
+    const schussEingabeB = document.getElementById("schussEingabeB").value;
+
+    // Übergebe die eingegebenen Werte für m und b an die fireShot-Funktion
+    fireShot(schussEingabeM, schussEingabeB);
 }
 
-function fireShot(formula) {
+function fireShot(m, b) {
     const schussFormelInput = document.getElementById("schussFormel");
-    const schussFormel = formula || schussFormelInput.value;
 
     try {
-        const parsedFormel = new Function('x', `return ${schussFormel}`);
-        
-        // Zeichne die Linie auf dem Canvas
+        // Erstelle die Formel basierend auf den eingegebenen Werten für m und b
+        const parsedFormel = new Function('x', `return ${m}*x + ${b}`);
+
+        // Draw the line on the Canvas
         drawLine(parsedFormel);
 
-        // Beispiel: Schuss auf das Spielfeld mit der eingegebenen Formel
+        // Beispiel: Schieße auf das Spielfeld mit der eingegebenen Formel
         for (let i = 1; i <= 10; i++) {
             const x = i;
             const y = parsedFormel(x);
@@ -180,18 +184,17 @@ function fireShot(formula) {
             // Überprüfe, ob der Schuss ein Schiff getroffen hat
             if (checkHit(x, y)) {
                 console.log(`Hit at position (${x}, ${y})!`);
-                // Weitere Logik für einen Treffer, z.B. das Markieren der Zelle als getroffen
+                // Zusätzliche Logik für einen Treffer, z. B. Markieren der Zelle als getroffen
             }
         }
 
-        schussFormelInput.value = ""; // Zurücksetzen der Eingabe
+        schussFormelInput.value = ""; // Setze das Input-Feld zurück
 
     } catch (error) {
-        console.error("Fehler beim Auswerten der Formel:", error);
-        // Handle den Fehler, wenn die Formel nicht korrekt ist
+        console.error("Error evaluating formula:", error);
+        // Handle the error if the formula is not correct
     }
 }
-
 
 function drawLine(equation) {
     const canvas = document.getElementById("schussCanvas");
@@ -208,25 +211,24 @@ function drawLine(equation) {
         }
 
         context.strokeStyle = "red";
-        context.lineWidth = 2;
+        context.lineWidth = 4;
         context.stroke();
     }
 }
 
 function checkHit(x, y) {
-    // Überprüfe jedes Schiff auf einen Treffer
+    // Check each ship for a hit
     const ships = document.querySelectorAll(".draggable-boat");
     for (const ship of ships) {
         const shipRow = parseInt(ship.getAttribute("data-ship-row"));
         const shipCol = parseInt(ship.getAttribute("data-ship-col"));
 
         if (x === shipCol && y === shipRow) {
-            return true; // Treffer!
+            return true; // Hit!
         }
     }
 
-    return false; // Kein Treffer
+    return false; // No hit
 }
 
-// Beispiel: Schuss auf das Spielfeld mit der Formel "2*x+1"
-fireShot("2*x+1");
+

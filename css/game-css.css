@@ -53,6 +53,7 @@ html{
 
 table{
   border-collapse: collapse;
+  z-index: 2;
 }
 .left-table{
   padding-right: 3em;
@@ -233,18 +234,14 @@ td {
     font-size: larger;
     font-weight: lighter;
 }
-#schussplayer{
-    color: white;
-    font-family: 'BubbleWaterRegular';
-    font-size: larger;
-    font-weight: lighter;
-}
+
 #canvas-container {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 50px auto 0;
+  z-index: 1;
 }
 
 #schussCanvas {
@@ -252,18 +249,45 @@ td {
   height: 100%; /* Ändere die Höhe nach Bedarf */
   position: relative;
 }
-/*.schussdiv {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; /* Dies sorgt dafür, dass der Bereich die volle Höhe des Bildschirms einnimmt */
-/*}
 
-.input-group {
-  margin-top: 20px; /* Verändere diesen Wert nach Bedarf */
-/*}
+.schussdiv{
+  margin-top: 10em;
+  z-index: 3;
+  font-size: larger;
+  text-align: center;
+}
+#formelcontainer{
 
-.schussbutton {
-  margin-top: 20px; /* Verändere diesen Wert nach Bedarf */
-/*}*/
+}
+.schussinputfield{
+  width: 1.5em;
+  text-align: center;
+}
+.schussbutton{
+  font-family: 'BubbleWaterRegular';
+  margin-top: 1em;
+  font-size: 18px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  will-change: box-shadow,transform;
+  background: radial-gradient( 100% 100% at 100% 0%, #89e5ff1f 0%, #5468ff18 100% );
+  box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+  padding: 0 2em;
+  border-radius: 0.3em;
+  color: #fff;
+  height: 2.6em;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.schussbutton:hover {
+  box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #3c4fe0;
+  transform: translateY(-0.1em);
+}
+
+.schussbutton:active {
+  box-shadow: inset 0px 0.1em 0.6em #3c4fe02f;
+  transform: translateY(0em);
+}
