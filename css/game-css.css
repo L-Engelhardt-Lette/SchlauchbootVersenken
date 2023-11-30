@@ -253,8 +253,7 @@ td {
   margin-top: 20px; /* Verändere diesen Wert nach Bedarf */
 /*}*/
 .schussdiv{
-  margin-left: 1100px;
-  margin-top: 600px;
+  margin-top: 10em;
   z-index: 3;
   font-size: larger;
 }
