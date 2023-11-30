@@ -83,9 +83,91 @@ td {
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
+  size: 2em;
+
+}
+/*#################*/
+/* Blaues Boot 1 */
+#bb1{
+
+}
+/* Rotes Boot 1 */
+#br1{
+
+}
+/* Blaues Boot 2 */
+#bb2{
 
 }
 
+#bb2a{
+
+}
+/* Rotes Boot 2 */
+#br2{
+
+}
+
+#br2a{
+
+}
+/* Blaues Boot 3 */
+#bb3{
+
+}
+
+#bb3a{
+
+}
+
+#bb3b{
+
+}
+/* Rotes Boot 3 */
+#br3{
+
+}
+
+#br3a{
+
+}
+
+#br3b{
+
+}
+/* Blaues Boot 4 */
+#bb4{
+
+}
+
+#bb4a{
+
+}
+
+#bb4b{
+
+}
+
+#bb4c{
+
+}
+/* Rottes Boot 4 */
+#br4{
+
+}
+
+#br4a{
+
+}
+
+#br4b{
+
+}
+
+#br4c{
+
+}
+/*#################*/
 .player1-container{
   margin-left: 2em;
   list-style-image: 100%;
@@ -117,27 +199,6 @@ td {
 
   .boot{
     margin: 0.4em;
-  }
-
-  #b1{
-    size: 2em;
-    height: 2em;
-    
-  }
-
-  #b2{
-    size: 2em;
-    height: 2em;
-  }
-
-  #b3{
-    size: 2em;
-    height: 2em;
-  }
-
-  #b4{
-    size: 2em;
-    height: 2em;
   }
 
 
