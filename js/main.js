@@ -145,39 +145,42 @@ function drop(event) {
     draggedElement.style.display = "none";
 }
 
-const schussButton = document.getElementById("schussButton");
+const schussButton = document.querySelector(".schussbutton");
 schussButton.addEventListener("click", onSchussButtonClicked);
 
 function onSchussButtonClicked() {
     console.log("Schussbutton wurde gedrückt!");
-    const schussFormelInput = document.getElementById("schussFormel");
-    const schussFormel = schussFormelInput.value;
-    fireShot(schussFormel);
+
+    const schussEingabeM = document.getElementById("schussEingabeM").value;
+    const schussEingabeB = document.getElementById("schussEingabeB").value;
+
+    // Übergebe die eingegebenen Werte für m und b an die fireShot-Funktion
+    fireShot(schussEingabeM, schussEingabeB);
 }
 
-function fireShot(formula) {
+function fireShot(m, b) {
     const schussFormelInput = document.getElementById("schussFormel");
-    const schussFormel = formula || schussFormelInput.value;
 
     try {
-        const parsedFormel = new Function('x', `return ${schussFormel}`);
+        // Erstelle die Formel basierend auf den eingegebenen Werten für m und b
+        const parsedFormel = new Function('x', `return ${m}*x + ${b}`);
 
         // Draw the line on the Canvas
         drawLine(parsedFormel);
 
-        // Example: Shoot on the game board with the entered formula
+        // Beispiel: Schieße auf das Spielfeld mit der eingegebenen Formel
         for (let i = 1; i <= 10; i++) {
             const x = i;
             const y = parsedFormel(x);
 
-            // Check if the shot hit a ship
+            // Überprüfe, ob der Schuss ein Schiff getroffen hat
             if (checkHit(x, y)) {
                 console.log(`Hit at position (${x}, ${y})!`);
-                // Additional logic for a hit, e.g., marking the cell as hit
+                // Zusätzliche Logik für einen Treffer, z. B. Markieren der Zelle als getroffen
             }
         }
 
-        schussFormelInput.value = ""; // Reset the input
+        schussFormelInput.value = ""; // Setze das Input-Feld zurück
 
     } catch (error) {
         console.error("Error evaluating formula:", error);
@@ -200,7 +203,7 @@ function drawLine(equation) {
         }
 
         context.strokeStyle = "red";
-        context.lineWidth = 2;
+        context.lineWidth = 4;
         context.stroke();
     }
 }
@@ -220,5 +223,4 @@ function checkHit(x, y) {
     return false; // No hit
 }
 
-// Example: Shoot on the game board with the formula "2*x+1"
-fireShot("2*x+1");
+
