@@ -112,7 +112,7 @@
                         </button>
                     </div>
                     <div class=" " style="width: 200px;">
-                        <button class="footer footer-button" onclick="window.location.href='/index.html';">
+                        <button class="footer footer-button" onclick="restart()">
                             <span> Back
                             </span>
                         </button>
@@ -129,6 +129,17 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <!-- In Ihrer HTML-Datei nach den anderen Script-Tags hinzufügen -->
     <script>
+
+        function restart() {
+           
+            var boats = document.getElementsByClassName("hide");
+            //foreach boat in boats
+            boats[0].classList.remove("hide");
+            window.location.href='/index.html';
+           
+
+        }
+
         function allowDrag(event) {
             event.dataTransfer.setData("text", event.target.id);
             event.dataTransfer.setData("offsetX", event.offsetX);

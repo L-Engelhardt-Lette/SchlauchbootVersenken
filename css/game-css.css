@@ -85,6 +85,18 @@ td {
   size: 2em;
 
 }
+
+.invisible {  visibility: hidden !important;}
+
+.hide {
+  display : none;
+  visibility: hidden !important;
+}
+
+.show {
+  display : block;
+  visibility:visible !important;
+}
 /*#################*/
 /* Blaues Boot 1 */
 #bb1{
@@ -92,7 +104,7 @@ td {
 }
 /* Rotes Boot 1 */
 #br1{
-
+  
 }
 /* Blaues Boot 2 */
 #bb2{

@@ -125,15 +125,23 @@ function drop(event) {
 
         // Determine the team (red or blue) based on the data-team attribute
         const team = cell.getAttribute("data-team");
-
+        alert("Hallo");
         const img = document.getElementById(data);
 
-        // Set the size of the image to match the cell size
-        img.style.width = "100%";
-        img.style.height = "100%";
+        //clone image to drop
+        const clone = img.cloneNode(true);
+         // Set the size of the image to match the cell size
+        clone.style.width = "100%";
+        clone.style.height = "100%";
+       
+        //set original image to invisible
+        img.classList.add("hide");
+        
+       
 
-        // Append the image to the cell
-        cell.appendChild(img);
+
+        // Append the cloned image to the cell
+        cell.appendChild(clone);
 
         // Set the ship's position data attributes
         cell.setAttribute("data-ship-row", cell.getAttribute("data-row"));
