@@ -66,22 +66,6 @@
             </div>
         </div>
     </div>
-    <div class="schussdiv position-absolute top-50 end-60 translate-middle-x">
-        <span id="schusstext">Player <span id="schussplayer">Player 1</span> ist jetzt dran</span>
-        <div class="input-group">
-            <input required="" type="text" name="text" autocomplete="off" class="input" id="schussFormel" placeholder="Bitte Formel eingeben">
-            <label class="user-label"></label>
-        </div>
-        <button class="schussbutton" onclick="fireShot()">
-            <span>Schießen</span><i></i>
-        </button>
-    </div>
-    <!--
-    <div class="table-container position-absolute top-50 start-50 translate-middle">
-        <div class="table-div" id="table" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
-        <canvas id="bg-canvas" width="40%" height="40%"></canvas>
-    </div>
-    -->
     <div class="position-absolute top-50 start-50 translate-middle table-container">
         <div class="left-table">
             <div id="table-player1"></div>
@@ -92,9 +76,19 @@
             <canvas></canvas>
         </div>
     </div>
+    <div class="schussdiv position-absolute top-50 end-60 translate-middle-x">
+        <span id="schusstext">Player <span id="schussplayer">Player 1</span> ist jetzt dran</span>
+        <div class="input-group">
+            <input required="" type="text" name="text" autocomplete="off" class="input" id="schussFormel" placeholder="Bitte Formel eingeben">
+            <label class="user-label"></label>
+        </div>
+        <button class="schussbutton" onclick="fireShot()">
+            <span>Schießen</span><i></i>
+        </button>
+    </div>
     <!--END-->
-
-    <!--Footer-->
+        
+        <!--Footer-->
     <div>
         <footer>
             <div class="Game-Interface-Create">
