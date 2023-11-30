@@ -121,34 +121,34 @@
     <script src="/js/main.js"></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <!-- In Ihrer HTML-Datei nach den anderen Script-Tags hinzufügen -->
-    <script>
-        function allowDrag(event) {
-            event.dataTransfer.setData("text", event.target.id);
-            event.dataTransfer.setData("offsetX", event.offsetX);
-        }
-
-        function handleDrop(event) {
-            event.preventDefault();
-            var boatId = event.dataTransfer.getData("text");
-            var offsetX = parseInt(event.dataTransfer.getData("offsetX"));
-            var targetTable = event.target;
-
-            if (targetTable.classList.contains("droppable-cell") && !targetTable.classList.contains("occupied")) {
-                var draggedBoatPart = document.getElementById(boatId);
-
-                // Füge das Bootteil in die Zelle ein und markiere sie als belegt
-                targetTable.appendChild(draggedBoatPart);
-                targetTable.classList.add("occupied");
-
-                // Berücksichtige den Offset, um das Bootteil korrekt zu positionieren
-                draggedBoatPart.style.left = (event.clientX - offsetX - targetTable.getBoundingClientRect().left) + "px";
+        <script>
+            function allowDrag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+                event.dataTransfer.setData("offsetX", event.offsetX);
             }
-        }
-
-        function handleDragOver(event) {
-            event.preventDefault();
-        }
-    </script>
-
-</body>
+        
+            function handleDrop(event) {
+                event.preventDefault();
+                var boatId = event.dataTransfer.getData("text");
+                var offsetX = parseInt(event.dataTransfer.getData("offsetX"));
+                var targetTable = document.getElementById("table");
+                var targetCell = event.target;
+        
+                if (targetTable.contains(targetCell) && !targetCell.classList.contains("occupied")) {
+                    var draggedBoatPart = document.getElementById(boatId);
+        
+                    // Füge das Bootteil in die Zelle ein und markiere sie als belegt
+                    targetCell.appendChild(draggedBoatPart);
+                    targetCell.classList.add("occupied");
+        
+                    // Berücksichtige den Offset, um das Bootteil korrekt zu positionieren
+                    draggedBoatPart.style.left = (event.clientX - offsetX - targetCell.getBoundingClientRect().left) + "px";
+                }
+            }
+        
+            function handleDragOver(event) {
+                event.preventDefault();
+            }
+        </script> 
+    </body>
 </html>
