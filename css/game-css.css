@@ -246,9 +246,12 @@ td {
 }
 
 #schussCanvas {
-  width: 100%; /* Ändere die Breite nach Bedarf */
-  height: 100%; /* Ändere die Höhe nach Bedarf */
-  position: relative;
+  width: 26%; /* Ändere die Breite nach Bedarf */
+  height: 24.1%; /* Ändere die Höhe nach Bedarf */
+  position:absolute;
+  z-index: 5;
+  margin-top: 66.85em;
+  margin-right: 2.5em;
 }
 
 .schussdiv{
