@@ -54,10 +54,11 @@ html{
 table{
   border-collapse: collapse;
   z-index: 2;
-}
+}/*
 .left-table{
   padding-right: 3em;
-}
+  
+}*/
 .right-table{
   padding-left: 3em;
 }
