@@ -52,13 +52,27 @@ td {
     vertical-align: middle;
 }
   
-.draggable-boat {
+.draggable-boat{
     width: 2em;
     height: 2em;
     text-align: center;
     vertical-align: middle;
     cursor: pointer;
     size: 2em;  
+}
+
+.invisible{
+    visibility: hidden !important;
+}
+
+.hide{
+    display : none;
+    visibility: hidden !important;
+}
+
+.show{
+    display : block;
+    visibility:visible !important;
 }
 
 /* Footer */
