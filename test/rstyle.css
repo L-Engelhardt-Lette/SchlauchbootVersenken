@@ -28,7 +28,38 @@ html{
 
 /* Main */
 
+table{
+    border-collapse: collapse;
+    z-index: 2;
+}
 
+.right-table{
+    padding-left: 3em;
+}
+
+.table-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+td {
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--white);
+    text-align: center;
+    vertical-align: middle;
+}
+  
+.draggable-boat {
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    size: 2em;  
+}
 
 /* Footer */
 
