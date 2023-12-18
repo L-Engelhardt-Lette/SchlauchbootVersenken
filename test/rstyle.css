@@ -1,0 +1,73 @@
+
+/* Global CSS */
+
+html{
+    /* Global colors */
+    --black: #070600ff;
+    --white: #f7f7ffff;
+    --light: #00c2d1ff;
+    --mid:   #2ca6a4ff;
+    --dark:  #3066beff;
+
+    /* Font */
+    font-family: 'BubbleWaterRegular';
+}
+
+@font-face {
+    font-family: 'BubbleWaterRegular';
+    src: url('/font/BubbleWaterRegular.ttf');
+}
+
+.bg-img{
+    background-image: url(/img/bg.jpg);
+}
+
+/* Header */
+
+
+
+/* Main */
+
+
+
+/* Footer */
+
+.footer-button {
+    font-size: 18px;
+    font-family: BubbleWaterRegular;
+    font-weight: 400;
+    color: var(--white);
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+}
+  
+.footer-button:focus,
+.footer-button:hover {
+    color: var(--light);
+}
+  
+.footer-button:focus:after,
+.footer-button:hover:after {
+    width: 100%;
+    left: 0%;
+}
+  
+.footer-button:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--light);
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
