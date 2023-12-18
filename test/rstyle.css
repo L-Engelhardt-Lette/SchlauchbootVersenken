@@ -156,6 +156,47 @@ td {
 
 }
 
+.player1-container{
+    margin-left: 2em;
+    list-style-image: 100%;
+}
+  
+.player2-container{
+    margin-right: 2em;
+}
+  
+.boot-container{
+    padding: 2em 2em;
+    border-radius: 30px;
+    background: rgba(230,230,230, 0.25);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, 
+                rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+}
+  
+.player-text{
+    font-family: 'BubbleWaterRegular';
+    color: var(--white);
+}
+  
+.boot-group img {
+    width: 2em;
+    height: 2em;
+    margin-right: 5px;
+    object-fit: cover;
+}
+  
+.boot{
+    margin: 0.4em;
+}
+  
+.Game-Interface-Create{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+  
 /* Footer */
 
 .footer-button {
