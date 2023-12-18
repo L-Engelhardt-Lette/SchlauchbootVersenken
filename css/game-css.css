@@ -190,36 +190,30 @@ td {
   margin-right: 2em;
 }
 
-  .boot-container{
-    padding: 2em 2em;
-    border-radius: 30px;
-    background: rgba(230,230,230, 0.25);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, 
-                rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
-  }
-
-  .player-text{
-    font-family: 'BubbleWaterRegular';
-    color: var(--white);
-  }
-
-  .boot-group img {
-    width: 2em;
-    height: 2em;
-    margin-right: 5px;
-    object-fit: cover;
+.boot-container{
+  padding: 2em 2em;
+  border-radius: 30px;
+  background: rgba(230,230,230, 0.25);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, 
+              rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
 }
 
-  .boot{
-    margin: 0.4em;
-  }
+.player-text{
+  font-family: 'BubbleWaterRegular';
+  color: var(--white);
+}
 
+.boot-group img {
+  width: 2em;
+  height: 2em;
+  margin-right: 5px;
+  object-fit: cover;
+}
 
-/*  END
-*/
+.boot{
+  margin: 0.4em;
+}
 
-/*  Footer
-*/
 .Game-Interface-Create{
     position: fixed;
     left: 0;
@@ -227,13 +221,12 @@ td {
     width: 100%;
     text-align: center;
 }
-/*  END
-*/
+
 #schusstext{
-    color: white;
-    font-family: 'BubbleWaterRegular';
-    font-size: larger;
-    font-weight: lighter;
+  color: var(--white);
+  font-family: 'BubbleWaterRegular';
+  font-size: larger;
+  font-weight: lighter;
 }
 
 #canvas-container {
@@ -280,7 +273,7 @@ td {
   box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
   padding: 0 2em;
   border-radius: 0.3em;
-  color: #fff;
+  color: var(--white);
   height: 2.6em;
   text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
