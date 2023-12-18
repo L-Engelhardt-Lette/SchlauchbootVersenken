@@ -26,7 +26,7 @@ body {
     margin: 0 auto;
     position: relative;
     text-align: center;
-    color: var(--white)
+    color: var(--white);
     width: 400px;
 }
 .title-text{
@@ -45,7 +45,7 @@ body {
     width:14em;
 }
 .olaf {
-    color: var(--white)
+    color: var(--white);
     text-decoration: none;
 }
 #index-footer{
