@@ -125,7 +125,7 @@ function drop(event) {
 
         // Determine the team (red or blue) based on the data-team attribute
         const team = cell.getAttribute("data-team");
-        alert("Hallo");
+        
         const img = document.getElementById(data);
 
         //clone image to drop
