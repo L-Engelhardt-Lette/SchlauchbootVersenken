@@ -56,7 +56,7 @@ table{
   z-index: 2;
 }
 .left-table{
-  padding-right: 3em;
+ /* padding-right: 3em;*/
   z-index: 4;
 }
 .right-table{
