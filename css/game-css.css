@@ -57,9 +57,11 @@ table{
 }
 .left-table{
   padding-right: 3em;
+  z-index: 4;
 }
 .right-table{
   padding-left: 3em;
+  z-index: 4;
 }
 .table-container {
   display: flex;
@@ -239,7 +241,7 @@ td {
 }
 
 .schussdiv{
-  margin-top: 10em;
+  margin-top: 12em;
   z-index: 3;
   font-size: larger;
   text-align: center;
