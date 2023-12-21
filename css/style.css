@@ -1,5 +1,3 @@
-/*  MAIN CSS
-*/
 html{
     --black: #070600ff;
     --white: #f7f7ffff;
@@ -16,11 +14,6 @@ body {
     height: 100%;
     font-family: 'BubbleWaterRegular';
 }
-/*  END
-*/
-
-/*  Global
-*/
 .bg-img{
     background-image: url(/img/bg.jpg);
 }
@@ -28,18 +21,12 @@ body {
     font-family: 'BubbleWaterRegular';
     src: url('/font/BubbleWaterRegular.ttf');
 }
-
-/*  END
-*/
-
-/*  Header Index
-*/
 .title-div{
     text-align: center;
     margin: 0 auto;
     position: relative;
     text-align: center;
-    color: white;
+    color: var(--white)
     width: 400px;
 }
 .title-text{
@@ -53,22 +40,12 @@ body {
     font-family: 'BubbleWaterRegular';
 
 }
-/*  END
-*/
-
-/*  Game Interface
-*/
 .Game-Interface-Start{
     margin: auto;
     width:14em;
 }
-/*  END
-*/
-
-/*  Footer
-*/
 .olaf {
-    color: white;
+    color: var(--white)
     text-decoration: none;
 }
 #index-footer{
@@ -88,10 +65,6 @@ body {
     color: var(--white);
     padding-bottom: 0.5em;
 }
-/*  END
-*/
-
-
 .cover-container {
     flex: 1;
     display: flex;
@@ -100,7 +73,3 @@ body {
     align-items: center;
     height: 100%;
 }
-
-
-
-  

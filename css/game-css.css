@@ -54,7 +54,7 @@ html{
 table{
   border-collapse: collapse;
   z-index: 2;
-}
+}/*
 .left-table{
   padding-right: 3em;
   z-index: 4;
@@ -88,6 +88,18 @@ td {
   size: 2em;
 
 }
+
+.invisible {  visibility: hidden !important;}
+
+.hide {
+  display : none;
+  visibility: hidden !important;
+}
+
+.show {
+  display : block;
+  visibility:visible !important;
+}
 /*#################*/
 /* Blaues Boot 1 */
 #bb1{
@@ -95,7 +107,7 @@ td {
 }
 /* Rotes Boot 1 */
 #br1{
-
+  
 }
 /* Blaues Boot 2 */
 #bb2{
@@ -235,9 +247,12 @@ td {
 }
 
 #schussCanvas {
-  width: 100%; /* Ändere die Breite nach Bedarf */
-  height: 100%; /* Ändere die Höhe nach Bedarf */
-  position: relative;
+  width: 26%; /* Ändere die Breite nach Bedarf */
+  height: 24.1%; /* Ändere die Höhe nach Bedarf */
+  position:absolute;
+  z-index: 5;
+  margin-top: 66.85em;
+  margin-right: 2.5em;
 }
 
 .schussdiv{

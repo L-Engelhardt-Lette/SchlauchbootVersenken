@@ -66,16 +66,18 @@
             </div>
         </div>
     </div>
-    <div class="position-absolute top-50 start-50 translate-middle table-containesr">
-        <div class="left-table">
-            <div id="table-player1" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"></div>
-            <canvas></canvas>
+    <div class="d-flex justify-content-center">
+        <div class="position-absolute top-50 start-50 translate-middle table-container">
+            <div class="left-table">
+                <div id="table-player1" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"></div>
+                <canvas></canvas>
+            </div>
+            <div class="right-table">
+                <div id="table-player2" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"></div>
+                <canvas></canvas>
+            </div>
         </div>
-        <div class="right-table">
-            <div id="table-player2" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"></div>
-            <canvas></canvas>
-        </div>
-    </div>
+    </div>    
     <div class="schussdiv position-absolute top-50 start-50 translate-middle">
         <span id="schusstext">Player <span id="schussplayer">Player 1</span> ist jetzt dran </span>
         <div id="formelcontainer">
@@ -109,7 +111,7 @@
                         </button>
                     </div>
                     <div class=" " style="width: 200px;">
-                        <button class="footer footer-button" onclick="window.location.href='/index.html';">
+                        <button class="footer footer-button" onclick="restart()">
                             <span> Back
                             </span>
                         </button>
@@ -124,34 +126,46 @@
     <script src="/js/main.js"></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <!-- In Ihrer HTML-Datei nach den anderen Script-Tags hinzufügen -->
-        <script>
-            function allowDrag(event) {
-                event.dataTransfer.setData("text", event.target.id);
-                event.dataTransfer.setData("offsetX", event.offsetX);
+    <script>
+
+        function restart() {
+           
+            var boats = document.getElementsByClassName("hide");
+            //foreach boat in boats
+            boats[0].classList.remove("hide");
+            window.location.href='/index.html';
+           
+
+        }
+
+        function allowDrag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+            event.dataTransfer.setData("offsetX", event.offsetX);
+        }
+    
+        function handleDrop(event) {
+            event.preventDefault();
+            var boatId = event.dataTransfer.getData("text");
+            var offsetX = parseInt(event.dataTransfer.getData("offsetX"));
+            var targetTable = document.getElementById("table");
+            var targetCell = event.target;
+    
+            if (targetTable.contains(targetCell) && !targetCell.classList.contains("occupied")) {
+                var draggedBoatPart = document.getElementById(boatId);
+    
+                // Füge das Bootteil in die Zelle ein und markiere sie als belegt
+                targetCell.appendChild(draggedBoatPart);
+                targetCell.classList.add("occupied");
+    
+                // Berücksichtige den Offset, um das Bootteil korrekt zu positionieren
+                draggedBoatPart.style.left = (event.clientX - offsetX - targetCell.getBoundingClientRect().left) + "px";
             }
-        
-            function handleDrop(event) {
-                event.preventDefault();
-                var boatId = event.dataTransfer.getData("text");
-                var offsetX = parseInt(event.dataTransfer.getData("offsetX"));
-                var targetTable = document.getElementById("table");
-                var targetCell = event.target;
-        
-                if (targetTable.contains(targetCell) && !targetCell.classList.contains("occupied")) {
-                    var draggedBoatPart = document.getElementById(boatId);
-        
-                    // Füge das Bootteil in die Zelle ein und markiere sie als belegt
-                    targetCell.appendChild(draggedBoatPart);
-                    targetCell.classList.add("occupied");
-        
-                    // Berücksichtige den Offset, um das Bootteil korrekt zu positionieren
-                    draggedBoatPart.style.left = (event.clientX - offsetX - targetCell.getBoundingClientRect().left) + "px";
-                }
-            }
-        
-            function handleDragOver(event) {
-                event.preventDefault();
-            }
-        </script> 
-    </body>
+        }
+    
+        function handleDragOver(event) {
+            event.preventDefault();
+        }
+    </script>
+    
+</body>
 </html>

@@ -67,8 +67,11 @@ function drop(event) {
         cell.setAttribute("data-occupied", "true");
         const team = cell.getAttribute("data-team");
         const img = document.getElementById(data);
-        cell.appendChild(img);
-    }
+        alert("Hello");
+        const clone = img.cloneNode(true);
+        img.setAttribute("display","none");
+        cell.appendChild(clone);
+    } 
     const draggedElement = document.getElementById(boatSize.toString());
     draggedElement.style.display = "none";
 }
